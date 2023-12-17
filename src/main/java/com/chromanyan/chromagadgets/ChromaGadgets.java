@@ -33,6 +33,7 @@ public class ChromaGadgets {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::clientSetup);
+        modEventBus.addListener(this::gatherData);
 
         ModItems.ITEMS_REGISTRY.register(modEventBus);
 
