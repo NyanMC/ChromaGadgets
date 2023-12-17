@@ -2,3 +2,7 @@
 /build/
 /.idea/
 /.gradle/
+/src/generated/resources/.cache/
+/run-data/
+/run-data/config/
+/run-data/logs/

@@ -1,6 +1,7 @@
 package com.chromanyan.chromagadgets;
 
 import com.chromanyan.chromagadgets.datagen.CGModels;
+import com.chromanyan.chromagadgets.datagen.CGRecipes;
 import com.chromanyan.chromagadgets.events.GadgetEvents;
 import com.chromanyan.chromagadgets.init.ModItems;
 import com.chromanyan.chromagadgets.items.ItemSculkometer;
@@ -47,6 +48,7 @@ public class ChromaGadgets {
         ExistingFileHelper efh = event.getExistingFileHelper();
 
         gen.addProvider(event.includeClient(), new CGModels(gen, efh));
+        gen.addProvider(event.includeServer(), new CGRecipes(gen));
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
