@@ -1,0 +1,30 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_bad_omen": {
+      "conditions": {
+        "effects": {
+          "minecraft:bad_omen": {}
+        }
+      },
+      "trigger": "minecraft:effects_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "chromagadgets:white_flag"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_bad_omen",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "chromagadgets:white_flag"
+    ]
+  }
+}

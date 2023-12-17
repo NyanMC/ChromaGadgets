@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "e": {
+      "tag": "forge:gems/emerald"
+    },
+    "s": {
+      "tag": "forge:rods/wooden"
+    },
+    "w": {
+      "item": "minecraft:white_wool"
+    }
+  },
+  "pattern": [
+    "sww",
+    "sew",
+    "s  "
+  ],
+  "result": {
+    "item": "chromagadgets:white_flag"
+  }
+}

@@ -17,6 +17,6 @@ public class CGModels extends ItemModelProvider {
 
     @Override
     public void registerModels() {
-
+        basicModel("white_flag");
     }
 }
