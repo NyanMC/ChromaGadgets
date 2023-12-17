@@ -5,6 +5,8 @@ import com.chromanyan.chromagadgets.datagen.CGRecipes;
 import com.chromanyan.chromagadgets.events.GadgetEvents;
 import com.chromanyan.chromagadgets.init.ModItems;
 import com.chromanyan.chromagadgets.items.ItemSculkometer;
+import com.chromanyan.chromagadgets.packets.CGPacketHandler;
+import com.chromanyan.chromagadgets.packets.client.PacketWarningLevel;
 import com.mojang.logging.LogUtils;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.MinecraftForge;
@@ -53,6 +55,8 @@ public class ChromaGadgets {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         MinecraftForge.EVENT_BUS.register(new GadgetEvents());
+
+        CGPacketHandler.INSTANCE.registerMessage(0, PacketWarningLevel.class, PacketWarningLevel::encode, PacketWarningLevel::decode, PacketWarningLevel::handle);
     }
 
     private void clientSetup(final FMLClientSetupEvent event) {
