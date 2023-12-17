@@ -3,7 +3,7 @@
   "tooltip.chromagadgets.sculkometer.1": "Measures Warden aggression",
   "tooltip.chromagadgets.sculkometer.level.0": "Current level: §7Dormant",
   "tooltip.chromagadgets.sculkometer.level.1": "Current level: §eDisturbed",
-  "tooltip.chromagadgets.sculkometer.level.2": "Current level: §6Alerted",
+  "tooltip.chromagadgets.sculkometer.level.2": "Current level: §6Irritated",
   "tooltip.chromagadgets.sculkometer.level.3": "Current level: §cAggrovated",
   "tooltip.chromagadgets.sculkometer.level.4": "Current level: §4§lEnraged"
 }
