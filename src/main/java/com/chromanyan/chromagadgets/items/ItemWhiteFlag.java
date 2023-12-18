@@ -33,12 +33,12 @@ public class ItemWhiteFlag extends Item {
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, @NotNull Player player, @NotNull InteractionHand hand) {
         ItemStack itemstack = player.getItemInHand(hand);
         if (!(level instanceof ServerLevel serverLevel)) {
-            return InteractionResultHolder.pass(itemstack);
+            return InteractionResultHolder.success(itemstack); // this is probably the client
         }
 
         Raid raid = serverLevel.getRaidAt(player.blockPosition());
         if (raid == null) {
-            return InteractionResultHolder.pass(itemstack);
+            return InteractionResultHolder.fail(itemstack);
         }
 
         raid.status = Raid.RaidStatus.LOSS; // i needed two access transformers for this
