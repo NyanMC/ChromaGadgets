@@ -9,5 +9,8 @@
 
   "item.chromagadgets.white_flag": "White Flag",
   "tooltip.chromagadgets.white_flag.1": "Surrenders from a Raid, ending it in a defeat",
-  "tooltip.chromagadgets.white_flag.2": "Will not despawn existing raiders, but will prevent additional waves"
+  "tooltip.chromagadgets.white_flag.2": "Will not despawn existing raiders, but will prevent additional waves",
+
+  "item.chromagadgets.shrieker_horn": "Shrieker Horn",
+  "tooltip.chromagadgets.shrieker_horn.1": "May summon undesirable company when used in the Deep Dark"
 }
