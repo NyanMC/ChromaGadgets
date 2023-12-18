@@ -10,13 +10,18 @@ public class CGModels extends ItemModelProvider {
         super(generator, ChromaGadgets.MODID, existingFileHelper);
     }
 
-    @SuppressWarnings("SameParameterValue")
+    @SuppressWarnings("unused")
     private void basicModel(String name) {
         this.singleTexture(name, mcLoc("item/generated"), "layer0", modLoc("item/" + name));
     }
 
+    @SuppressWarnings("SameParameterValue")
+    private void heldModel(String name) {
+        this.singleTexture(name, mcLoc("item/handheld"), "layer0", modLoc("item/" + name));
+    }
+
     @Override
     public void registerModels() {
-        basicModel("white_flag");
+        heldModel("white_flag");
     }
 }
