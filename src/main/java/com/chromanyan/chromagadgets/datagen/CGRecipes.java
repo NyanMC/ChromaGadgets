@@ -41,5 +41,14 @@ public class CGRecipes extends RecipeProvider {
                 .define('e', Tags.Items.GEMS_EMERALD)
                 .unlockedBy("has_bad_omen", EffectsChangedTrigger.TriggerInstance.hasEffects(MobEffectsPredicate.effects().and(MobEffects.BAD_OMEN)))
                 .save(consumer, new ResourceLocation(ChromaGadgets.MODID, "white_flag"));
+
+        ShapedRecipeBuilder.shaped(ModItems.SHRIEKER_HORN.get(), 1)
+                .pattern("hs")
+                .pattern("sg")
+                .define('s', Items.SCULK)
+                .define('h', Items.SCULK_SHRIEKER)
+                .define('g', Items.GOAT_HORN)
+                .unlockedBy("has_shrieker", has(Items.SCULK_SHRIEKER))
+                .save(consumer, new ResourceLocation(ChromaGadgets.MODID, "shrieker_horn"));
     }
 }

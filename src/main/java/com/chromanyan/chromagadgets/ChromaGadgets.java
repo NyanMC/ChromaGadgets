@@ -5,6 +5,7 @@ import com.chromanyan.chromagadgets.datagen.CGRecipes;
 import com.chromanyan.chromagadgets.events.GadgetEvents;
 import com.chromanyan.chromagadgets.init.ModItems;
 import com.chromanyan.chromagadgets.items.ItemSculkometer;
+import com.chromanyan.chromagadgets.items.ItemShriekerHorn;
 import com.chromanyan.chromagadgets.packets.CGPacketHandler;
 import com.chromanyan.chromagadgets.packets.client.PacketWarningLevel;
 import com.mojang.logging.LogUtils;
@@ -61,5 +62,6 @@ public class ChromaGadgets {
 
     private void clientSetup(final FMLClientSetupEvent event) {
         ItemSculkometer.registerVariants();
+        ItemShriekerHorn.registerVariants();
     }
 }

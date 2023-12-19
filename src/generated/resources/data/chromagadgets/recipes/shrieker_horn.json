@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "g": {
+      "item": "minecraft:goat_horn"
+    },
+    "h": {
+      "item": "minecraft:sculk_shrieker"
+    },
+    "s": {
+      "item": "minecraft:sculk"
+    }
+  },
+  "pattern": [
+    "hs",
+    "sg"
+  ],
+  "result": {
+    "item": "chromagadgets:shrieker_horn"
+  }
+}

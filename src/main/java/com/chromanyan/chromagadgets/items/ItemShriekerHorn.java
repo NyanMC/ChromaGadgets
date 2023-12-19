@@ -1,7 +1,11 @@
 package com.chromanyan.chromagadgets.items;
 
+import com.chromanyan.chromagadgets.ChromaGadgets;
+import com.chromanyan.chromagadgets.init.ModItems;
 import com.chromanyan.chromagadgets.util.WardenSpawnHandler;
+import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
@@ -14,6 +18,8 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -62,5 +68,11 @@ public class ItemShriekerHorn extends Item {
         }
 
         return InteractionResultHolder.sidedSuccess(itemstack, level.isClientSide());
+    }
+
+    @OnlyIn(Dist.CLIENT)
+    public static void registerVariants() {
+        ItemProperties.register(ModItems.SHRIEKER_HORN.get(), new ResourceLocation(ChromaGadgets.MODID, "tooting"),
+                (stack, world, entity, thing) -> entity != null && entity.isUsingItem() && entity.getUseItem() == stack ? 1.0F : 0.0F);
     }
 }
