@@ -1,16 +1,14 @@
 {
   "item.chromagadgets.sculkometer": "Sculkometer",
   "tooltip.chromagadgets.sculkometer.1": "Measures Warden aggression",
-  "tooltip.chromagadgets.sculkometer.level.0": "Current level: §7Dormant",
-  "tooltip.chromagadgets.sculkometer.level.1": "Current level: §eDisturbed",
-  "tooltip.chromagadgets.sculkometer.level.2": "Current level: §6Irritated",
-  "tooltip.chromagadgets.sculkometer.level.3": "Current level: §cAggrovated",
-  "tooltip.chromagadgets.sculkometer.level.4": "Current level: §4§lEnraged",
 
   "item.chromagadgets.white_flag": "White Flag",
   "tooltip.chromagadgets.white_flag.1": "Surrenders from a Raid, ending it in a defeat",
   "tooltip.chromagadgets.white_flag.2": "Will not despawn existing raiders, but will prevent additional waves",
 
   "item.chromagadgets.shrieker_horn": "Shrieker Horn",
-  "tooltip.chromagadgets.shrieker_horn.1": "May provoke undesirable company when repeatedly used in the Deep Dark"
+  "tooltip.chromagadgets.shrieker_horn.1": "May provoke undesirable company when repeatedly used in the Deep Dark",
+
+  "item.chromagadgets.arcane_reroll": "Tome of Arcane Reroll",
+  "tooltip.chromagadgets.arcane_reroll.1": "Rerolls Enchanting Table enchantments"
 }

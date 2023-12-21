@@ -1,5 +1,6 @@
 package com.chromanyan.chromagadgets.items;
 
+import net.minecraft.network.chat.Component;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -7,14 +8,23 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class ItemArcaneReroll extends Item {
     public ItemArcaneReroll() {
         super(new Item.Properties()
                 .tab(CreativeModeTab.TAB_MISC)
                 .stacksTo(64));
+    }
+
+    @Override
+    public void appendHoverText(@NotNull ItemStack itemStack, @Nullable Level level, List<Component> list, @NotNull TooltipFlag flag) {
+        list.add(Component.translatable("tooltip.chromagadgets.arcane_reroll.1"));
     }
 
     @Override
