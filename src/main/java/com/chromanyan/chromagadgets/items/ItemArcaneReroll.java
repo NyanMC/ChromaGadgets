@@ -1,6 +1,8 @@
 package com.chromanyan.chromagadgets.items;
 
 import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -38,6 +40,8 @@ public class ItemArcaneReroll extends Item {
         if (!level.isClientSide()) {
             player.enchantmentSeed = player.random.nextInt();
         }
+
+        level.playSound(null, player.blockPosition(), SoundEvents.ENCHANTMENT_TABLE_USE, SoundSource.PLAYERS, 0.5F, 1.0F);
 
         player.awardStat(Stats.ITEM_USED.get(this));
         if (!player.getAbilities().instabuild) {
