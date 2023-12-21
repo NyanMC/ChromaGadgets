@@ -1,6 +1,7 @@
 package com.chromanyan.chromagadgets.init;
 
 import com.chromanyan.chromagadgets.ChromaGadgets;
+import com.chromanyan.chromagadgets.items.ItemArcaneReroll;
 import com.chromanyan.chromagadgets.items.ItemSculkometer;
 import com.chromanyan.chromagadgets.items.ItemShriekerHorn;
 import com.chromanyan.chromagadgets.items.ItemWhiteFlag;
@@ -16,4 +17,5 @@ public class ModItems {
     public static final RegistryObject<Item> SCULKOMETER = ITEMS_REGISTRY.register("sculkometer", ItemSculkometer::new);
     public static final RegistryObject<Item> WHITE_FLAG = ITEMS_REGISTRY.register("white_flag", ItemWhiteFlag::new);
     public static final RegistryObject<Item> SHRIEKER_HORN = ITEMS_REGISTRY.register("shrieker_horn", ItemShriekerHorn::new);
+    public static final RegistryObject<Item> ARCANE_REROLL = ITEMS_REGISTRY.register("arcane_reroll", ItemArcaneReroll::new);
 }
