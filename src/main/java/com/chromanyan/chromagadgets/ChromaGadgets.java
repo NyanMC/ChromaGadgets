@@ -1,6 +1,7 @@
 package com.chromanyan.chromagadgets;
 
 import com.chromanyan.chromagadgets.config.ModConfig;
+import com.chromanyan.chromagadgets.datagen.CGAdvancements;
 import com.chromanyan.chromagadgets.datagen.CGModels;
 import com.chromanyan.chromagadgets.datagen.CGRecipes;
 import com.chromanyan.chromagadgets.events.GadgetEvents;
@@ -56,6 +57,7 @@ public class ChromaGadgets {
 
         gen.addProvider(event.includeClient(), new CGModels(gen, efh));
         gen.addProvider(event.includeServer(), new CGRecipes(gen));
+        gen.addProvider(event.includeServer(), new CGAdvancements(gen, efh));
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {

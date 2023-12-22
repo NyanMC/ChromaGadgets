@@ -50,5 +50,16 @@ public class CGRecipes extends RecipeProvider {
                 .define('g', Items.GOAT_HORN)
                 .unlockedBy("has_shrieker", has(Items.SCULK_SHRIEKER))
                 .save(consumer, new ResourceLocation(ChromaGadgets.MODID, "shrieker_horn"));
+
+        ShapedRecipeBuilder.shaped(ModItems.MOSSY_MIRROR.get(), 1)
+                .pattern(" mr")
+                .pattern("mgm")
+                .pattern("sm ")
+                .define('m', Items.MOSS_BLOCK)
+                .define('r', Items.RECOVERY_COMPASS)
+                .define('g', Tags.Items.GLASS)
+                .define('s', Tags.Items.RODS_WOODEN)
+                .unlockedBy("has_rcompass", has(Items.RECOVERY_COMPASS))
+                .save(consumer, new ResourceLocation(ChromaGadgets.MODID, "mossy_mirror"));
     }
 }

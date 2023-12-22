@@ -32,7 +32,7 @@ public class ItemMossyMirror extends Item {
     ModConfig.Common config = ModConfig.COMMON;
 
     private static final DamageSource RECALL = new DamageSource("chromagadgets.recall").bypassArmor().bypassMagic().bypassEnchantments().bypassInvul();
-    // this item only exists so i can reference Betterified VI: Bestified
+    // Do you remember how you got here?
 
     public ItemMossyMirror() {
         super(new Item.Properties()

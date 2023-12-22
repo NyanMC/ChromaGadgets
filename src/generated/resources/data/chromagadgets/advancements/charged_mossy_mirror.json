@@ -1,0 +1,38 @@
+{
+  "parent": "minecraft:adventure/avoid_vibration",
+  "criteria": {
+    "charged": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chromagadgets:mossy_mirror"
+            ],
+            "nbt": "{charged:1b}"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.chromagadgets.charged_mossy_mirror.description"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "chromagadgets:mossy_mirror"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.chromagadgets.charged_mossy_mirror.title"
+    }
+  },
+  "requirements": [
+    [
+      "charged"
+    ]
+  ]
+}

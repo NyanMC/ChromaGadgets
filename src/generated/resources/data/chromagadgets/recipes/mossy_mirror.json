@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "g": {
+      "tag": "forge:glass"
+    },
+    "m": {
+      "item": "minecraft:moss_block"
+    },
+    "r": {
+      "item": "minecraft:recovery_compass"
+    },
+    "s": {
+      "tag": "forge:rods/wooden"
+    }
+  },
+  "pattern": [
+    " mr",
+    "mgm",
+    "sm "
+  ],
+  "result": {
+    "item": "chromagadgets:mossy_mirror"
+  }
+}
