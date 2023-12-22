@@ -15,7 +15,6 @@ public class CGModels extends ItemModelProvider {
         this.singleTexture(name, mcLoc("item/generated"), "layer0", modLoc("item/" + name));
     }
 
-    @SuppressWarnings("SameParameterValue")
     private void heldModel(String name) {
         this.singleTexture(name, mcLoc("item/handheld"), "layer0", modLoc("item/" + name));
     }
@@ -24,5 +23,6 @@ public class CGModels extends ItemModelProvider {
     public void registerModels() {
         heldModel("white_flag");
         basicModel("arcane_reroll");
+        heldModel("mossy_mirror");
     }
 }
