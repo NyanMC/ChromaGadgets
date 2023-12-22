@@ -31,7 +31,7 @@ public class ItemMossyMirror extends Item {
 
     ModConfig.Common config = ModConfig.COMMON;
 
-    private static final DamageSource FORGOR = new DamageSource("chromagadgets.forgor").bypassArmor().bypassMagic().bypassEnchantments().bypassInvul();
+    private static final DamageSource RECALL = new DamageSource("chromagadgets.recall").bypassArmor().bypassMagic().bypassEnchantments().bypassInvul();
     // this item only exists so i can reference Betterified VI: Bestified
 
     public ItemMossyMirror() {
@@ -77,7 +77,7 @@ public class ItemMossyMirror extends Item {
         player.teleportTo(deathPos.pos().getX(), deathPos.pos().getY(), deathPos.pos().getZ());
         level.playSound(null, player.blockPosition(), SoundEvents.CHORUS_FRUIT_TELEPORT, SoundSource.PLAYERS, 0.5F, 1.0F);
 
-        player.hurt(FORGOR, player.getMaxHealth() * config.mossyMirrorDamage.get().floatValue());
+        player.hurt(RECALL, player.getMaxHealth() * config.mossyMirrorDamage.get().floatValue());
         player.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, config.mossyMirrorWeaknessDuration.get(), config.mossyMirrorWeaknessAmplifier.get()));
 
         player.awardStat(Stats.ITEM_USED.get(this));
