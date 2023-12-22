@@ -1,5 +1,6 @@
 package com.chromanyan.chromagadgets;
 
+import com.chromanyan.chromagadgets.config.ModConfig;
 import com.chromanyan.chromagadgets.datagen.CGModels;
 import com.chromanyan.chromagadgets.datagen.CGRecipes;
 import com.chromanyan.chromagadgets.events.GadgetEvents;
@@ -15,6 +16,7 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -40,6 +42,8 @@ public class ChromaGadgets {
         modEventBus.addListener(this::gatherData);
 
         ModItems.ITEMS_REGISTRY.register(modEventBus);
+        ModLoadingContext.get().registerConfig(net.minecraftforge.fml.config.ModConfig.Type.COMMON, ModConfig.commonSpec);
+        modEventBus.register(ModConfig.class);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);

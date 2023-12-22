@@ -1,5 +1,6 @@
 package com.chromanyan.chromagadgets.items;
 
+import com.chromanyan.chromagadgets.config.ModConfig;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.GlobalPos;
 import net.minecraft.nbt.CompoundTag;
@@ -27,6 +28,8 @@ import java.util.List;
 import java.util.Optional;
 
 public class ItemMossyMirror extends Item {
+
+    ModConfig.Common config = ModConfig.COMMON;
 
     private static final DamageSource FORGOR = new DamageSource("chromagadgets.forgor").bypassArmor().bypassMagic().bypassEnchantments().bypassInvul();
     // this item only exists so i can reference Betterified VI: Bestified
@@ -74,8 +77,8 @@ public class ItemMossyMirror extends Item {
         player.teleportTo(deathPos.pos().getX(), deathPos.pos().getY(), deathPos.pos().getZ());
         level.playSound(null, player.blockPosition(), SoundEvents.CHORUS_FRUIT_TELEPORT, SoundSource.PLAYERS, 0.5F, 1.0F);
 
-        player.hurt(FORGOR, player.getMaxHealth() * 0.25F); //TODO configurability
-        player.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 2400, 1));
+        player.hurt(FORGOR, player.getMaxHealth() * config.mossyMirrorDamage.get().floatValue());
+        player.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, config.mossyMirrorWeaknessDuration.get(), config.mossyMirrorWeaknessAmplifier.get()));
 
         player.awardStat(Stats.ITEM_USED.get(this));
         return InteractionResultHolder.sidedSuccess(itemStack, level.isClientSide());

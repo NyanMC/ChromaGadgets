@@ -19,6 +19,6 @@
   "tooltip.chromagadgets.mossy_mirror.charged.1": "Empowered with energy from the swamp.",
   "tooltip.chromagadgets.mossy_mirror.charged.2": "Use to return to your last point of death.",
   "tooltip.chromagadgets.mossy_mirror.charged.3": "Deals damage and inflicts negative effects when doing so.",
-  "death.attack.chromagadgets.forgor": "%1$s forgot how they got here",
-  "death.attack.chromagadgets.forgor.player": "%1$s forgot how they got here whilst trying to escape %2$s"
+  "death.attack.chromagadgets.recall": "%1$s's body was torn apart when recalling to their death point",
+  "death.attack.chromagadgets.recall.player": "%1$s was killed by death recall whilst trying to escape %2$s"
 }
