@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
-@Mixin(value = LivingEntity.class, remap = false)
+@Mixin(value = LivingEntity.class)
 public class MixinLivingEntity {
     @Unique
     private static final float DEFAULT_FRICTION = 0.6F; // at least i'm pretty sure?
