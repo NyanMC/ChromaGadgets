@@ -12,6 +12,9 @@
   "item.chromagadgets.arcane_reroll": "Tome of Arcane Reroll",
   "tooltip.chromagadgets.arcane_reroll.1": "Rerolls Enchanting Table enchantments",
 
+  "enchantment.chromagadgets.friction": "Friction",
+  "enchantment.chromagadgets.friction.desc": "Prevents sliding on slippery blocks such as ice.",
+
   "item.chromagadgets.mossy_mirror": "Mossy Mirror",
   "tooltip.chromagadgets.mossy_mirror.1": "When in the inventory of a player, shows the coordinates of their most recent death",
   "tooltip.chromagadgets.mossy_mirror.2": "The mirror points to the following coordinates:",

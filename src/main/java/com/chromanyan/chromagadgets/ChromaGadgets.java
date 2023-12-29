@@ -5,6 +5,7 @@ import com.chromanyan.chromagadgets.datagen.CGAdvancements;
 import com.chromanyan.chromagadgets.datagen.CGModels;
 import com.chromanyan.chromagadgets.datagen.CGRecipes;
 import com.chromanyan.chromagadgets.events.GadgetEvents;
+import com.chromanyan.chromagadgets.init.ModEnchantments;
 import com.chromanyan.chromagadgets.init.ModItems;
 import com.chromanyan.chromagadgets.items.ItemSculkometer;
 import com.chromanyan.chromagadgets.items.ItemShriekerHorn;
@@ -42,7 +43,9 @@ public class ChromaGadgets {
         modEventBus.addListener(this::clientSetup);
         modEventBus.addListener(this::gatherData);
 
+        ModEnchantments.ENCHANTMENTS_REGISTRY.register(modEventBus);
         ModItems.ITEMS_REGISTRY.register(modEventBus);
+
         ModLoadingContext.get().registerConfig(net.minecraftforge.fml.config.ModConfig.Type.COMMON, ModConfig.commonSpec);
         modEventBus.register(ModConfig.class);
 
