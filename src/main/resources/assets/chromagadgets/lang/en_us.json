@@ -15,6 +15,9 @@
   "enchantment.chromagadgets.friction": "Friction",
   "enchantment.chromagadgets.friction.desc": "Prevents sliding on slippery blocks such as ice.",
 
+  "enchantment.chromagadgets.slipperiness": "Curse of Slipperiness",
+  "enchantment.chromagadgets.slipperiness.desc": "Causes the wearer to slide around as if they were always on ice.",
+
   "item.chromagadgets.mossy_mirror": "Mossy Mirror",
   "tooltip.chromagadgets.mossy_mirror.1": "When in the inventory of a player, shows the coordinates of their most recent death",
   "tooltip.chromagadgets.mossy_mirror.2": "The mirror points to the following coordinates:",

@@ -203,6 +203,9 @@ dependencies {
     runtimeOnly fg.deobf("curse.maven:project-240630:3951643") // just enough resources 1.1.0.179
     runtimeOnly fg.deobf("curse.maven:catalogue-459701:4171024") // catalogue 1.7.0
 
+    runtimeOnly fg.deobf("curse.maven:bookshelf-228525:4556697") // bookshelf 16.3.20
+    runtimeOnly fg.deobf("curse.maven:enchantment-descriptions-250419:4277356") // enchantment descriptions 13.0.14
+
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }
 

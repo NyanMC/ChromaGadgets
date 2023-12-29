@@ -16,17 +16,25 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 public class MixinLivingEntity {
     @Unique
     private static final float DEFAULT_FRICTION = 0.6F; // at least i'm pretty sure?
+    @Unique
+    private static final float SLIPPERY_FRICTION = 0.98F; // slipperiness of ice
 
     // can't mixin inject into interfaces, otherwise i would have opted for that
     @Redirect(method = "travel", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/state/BlockState;getFriction(Lnet/minecraft/world/level/LevelReader;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/Entity;)F"))
     private float getFriction(BlockState instance, LevelReader levelReader, BlockPos blockPos, Entity entity) {
         float originalReturn = instance.getFriction(levelReader, blockPos, entity);
-        if (
-                originalReturn <= DEFAULT_FRICTION
-                || !(entity instanceof LivingEntity livingEntity)
-                || EnchantmentHelper.getEnchantmentLevel(ModEnchantments.FRICTION.get(), livingEntity) == 0
-        ) return originalReturn;
+        if (!(entity instanceof LivingEntity livingEntity)) return originalReturn;
 
-        return DEFAULT_FRICTION;
+        if (
+                originalReturn > DEFAULT_FRICTION
+                && EnchantmentHelper.getEnchantmentLevel(ModEnchantments.FRICTION.get(), livingEntity) > 0
+        ) return DEFAULT_FRICTION;
+
+        if (
+                EnchantmentHelper.getEnchantmentLevel(ModEnchantments.SLIPPERINESS.get(), livingEntity) > 0
+                && originalReturn < SLIPPERY_FRICTION
+        ) return SLIPPERY_FRICTION;
+
+        return originalReturn;
     }
 }
