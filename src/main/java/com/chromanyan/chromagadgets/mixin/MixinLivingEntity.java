@@ -1,5 +1,6 @@
 package com.chromanyan.chromagadgets.mixin;
 
+import com.chromanyan.chromagadgets.config.ModConfig;
 import com.chromanyan.chromagadgets.init.ModEnchantments;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Entity;
@@ -16,9 +17,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 public abstract class MixinLivingEntity {
 
     @Unique
-    private static final float DEFAULT_FRICTION = 0.6F; // at least i'm pretty sure?
-    @Unique
-    private static final float SLIPPERY_FRICTION = 0.98F; // slipperiness of ice
+    private static final ModConfig.Common chromaGadgets$config = ModConfig.COMMON;
 
     // can't mixin inject into interfaces, otherwise i would have opted for that
     @Redirect(method = "travel", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/state/BlockState;getFriction(Lnet/minecraft/world/level/LevelReader;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/Entity;)F"))
@@ -27,16 +26,16 @@ public abstract class MixinLivingEntity {
         if (!(entity instanceof LivingEntity livingEntity)) return originalReturn;
 
         if (
-                originalReturn > DEFAULT_FRICTION
+                originalReturn > chromaGadgets$config.defaultFriction.get().floatValue()
                 && EnchantmentHelper.getEnchantmentLevel(ModEnchantments.FRICTION.get(), livingEntity) > 0
-        ) return DEFAULT_FRICTION;
+        ) return chromaGadgets$config.defaultFriction.get().floatValue();
 
         if (livingEntity.getBlockSpeedFactor() > 1.0F) return originalReturn;
 
         if (
                 EnchantmentHelper.getEnchantmentLevel(ModEnchantments.SLIPPERINESS.get(), livingEntity) > 0
-                && originalReturn < SLIPPERY_FRICTION
-        ) return SLIPPERY_FRICTION;
+                && originalReturn < chromaGadgets$config.slipperyFriction.get().floatValue()
+        ) return chromaGadgets$config.slipperyFriction.get().floatValue();
 
         return originalReturn;
     }
