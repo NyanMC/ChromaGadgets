@@ -13,7 +13,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(value = LivingEntity.class)
-public class MixinLivingEntity {
+public abstract class MixinLivingEntity {
+
     @Unique
     private static final float DEFAULT_FRICTION = 0.6F; // at least i'm pretty sure?
     @Unique
@@ -29,6 +30,8 @@ public class MixinLivingEntity {
                 originalReturn > DEFAULT_FRICTION
                 && EnchantmentHelper.getEnchantmentLevel(ModEnchantments.FRICTION.get(), livingEntity) > 0
         ) return DEFAULT_FRICTION;
+
+        if (livingEntity.getBlockSpeedFactor() > 1.0F) return originalReturn;
 
         if (
                 EnchantmentHelper.getEnchantmentLevel(ModEnchantments.SLIPPERINESS.get(), livingEntity) > 0
