@@ -8,6 +8,7 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.Items;
@@ -61,5 +62,14 @@ public class CGRecipes extends RecipeProvider {
                 .define('s', Tags.Items.RODS_WOODEN)
                 .unlockedBy("has_rcompass", has(Items.RECOVERY_COMPASS))
                 .save(consumer, new ResourceLocation(ChromaGadgets.MODID, "mossy_mirror"));
+
+        ShapelessRecipeBuilder.shapeless(ModItems.ASPHALT.get(), 4)
+                .requires(Items.BLACK_CONCRETE_POWDER)
+                .requires(Items.BLACK_CONCRETE_POWDER)
+                .requires(Tags.Items.COBBLESTONE)
+                .requires(Tags.Items.COBBLESTONE)
+                .requires(Items.CHARCOAL)
+                .unlockedBy("has_black_concrete_powder", has(Items.BLACK_CONCRETE_POWDER))
+                .save(consumer, new ResourceLocation(ChromaGadgets.MODID, "asphalt"));
     }
 }
