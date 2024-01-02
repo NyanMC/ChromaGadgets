@@ -12,6 +12,8 @@
   "item.chromagadgets.arcane_reroll": "Tome of Arcane Reroll",
   "tooltip.chromagadgets.arcane_reroll.1": "Rerolls Enchanting Table enchantments",
 
+  "block.chromagadgets.asphalt": "Asphalt",
+
   "enchantment.chromagadgets.friction": "Friction",
   "enchantment.chromagadgets.friction.desc": "Prevents sliding on slippery blocks such as ice.",
 

@@ -2,6 +2,8 @@ package com.chromanyan.chromagadgets.init;
 
 import com.chromanyan.chromagadgets.ChromaGadgets;
 import com.chromanyan.chromagadgets.items.*;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -16,4 +18,9 @@ public class ModItems {
     public static final RegistryObject<Item> SHRIEKER_HORN = ITEMS_REGISTRY.register("shrieker_horn", ItemShriekerHorn::new);
     public static final RegistryObject<Item> ARCANE_REROLL = ITEMS_REGISTRY.register("arcane_reroll", ItemArcaneReroll::new);
     public static final RegistryObject<Item> MOSSY_MIRROR = ITEMS_REGISTRY.register("mossy_mirror", ItemMossyMirror::new);
+
+    // blockitems
+    public static final RegistryObject<Item> ASPHALT = ITEMS_REGISTRY.register("asphalt",
+            () -> new BlockItem(ModBlocks.ASPHALT.get(),
+                    new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS).stacksTo(64)));
 }
