@@ -69,7 +69,7 @@ description='''${mod_description}'''
 [[dependencies.chromagadgets]]
    modId="enchdesc"
    mandatory=false
-   # enchantment descriptions bumps their major version all the time, make sure to bump this with every gane version
+   # enchantment descriptions bumps their major version all the time, make sure to bump this with every game version
    versionRange="[13,)"
    ordering="BEFORE"
    side="CLIENT"
