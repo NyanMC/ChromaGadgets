@@ -5,13 +5,11 @@ import com.chromanyan.chromagadgets.init.ModItems;
 import net.minecraft.advancements.critereon.EffectsChangedTrigger;
 import net.minecraft.advancements.critereon.MobEffectsPredicate;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.data.recipes.ShapedRecipeBuilder;
-import net.minecraft.data.recipes.ShapelessRecipeBuilder;
+import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.Tags;
 import org.jetbrains.annotations.NotNull;
 
@@ -71,5 +69,9 @@ public class CGRecipes extends RecipeProvider {
                 .requires(Items.CHARCOAL)
                 .unlockedBy("has_black_concrete_powder", has(Items.BLACK_CONCRETE_POWDER))
                 .save(consumer, new ResourceLocation(ChromaGadgets.MODID, "asphalt"));
+
+        UpgradeRecipeBuilder.smithing(Ingredient.of(Items.APPLE), Ingredient.of(Items.GILDED_BLACKSTONE), ModItems.BASTION_APPLE.get())
+                .unlocks("has_gilded_blackstone", has(Items.GILDED_BLACKSTONE))
+                .save(consumer, new ResourceLocation(ChromaGadgets.MODID, "bastion_apple"));
     }
 }

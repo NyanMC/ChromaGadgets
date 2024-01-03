@@ -10,7 +10,6 @@ public class CGModels extends ItemModelProvider {
         super(generator, ChromaGadgets.MODID, existingFileHelper);
     }
 
-    @SuppressWarnings("SameParameterValue")
     private void basicModel(String name) {
         this.singleTexture(name, mcLoc("item/generated"), "layer0", modLoc("item/" + name));
     }
@@ -24,5 +23,6 @@ public class CGModels extends ItemModelProvider {
         heldModel("white_flag");
         basicModel("arcane_reroll");
         heldModel("mossy_mirror");
+        basicModel("bastion_apple");
     }
 }

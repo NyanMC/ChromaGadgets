@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "addition": {
+    "item": "minecraft:gilded_blackstone"
+  },
+  "base": {
+    "item": "minecraft:apple"
+  },
+  "result": {
+    "item": "chromagadgets:bastion_apple"
+  }
+}
