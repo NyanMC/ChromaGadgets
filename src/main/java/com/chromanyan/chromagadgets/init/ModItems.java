@@ -19,6 +19,7 @@ public class ModItems {
     public static final RegistryObject<Item> ARCANE_REROLL = ITEMS_REGISTRY.register("arcane_reroll", ItemArcaneReroll::new);
     public static final RegistryObject<Item> MOSSY_MIRROR = ITEMS_REGISTRY.register("mossy_mirror", ItemMossyMirror::new);
     public static final RegistryObject<Item> BASTION_APPLE = ITEMS_REGISTRY.register("bastion_apple", ItemBastionApple::new);
+    public static final RegistryObject<Item> WANDERING_BAG = ITEMS_REGISTRY.register("wandering_bag", ItemWanderingBag::new);
 
     // blockitems
     public static final RegistryObject<Item> ASPHALT = ITEMS_REGISTRY.register("asphalt",
