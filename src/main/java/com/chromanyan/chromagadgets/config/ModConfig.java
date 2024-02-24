@@ -18,6 +18,8 @@ public class ModConfig {
         public final DoubleValue slipperyFriction;
         public final BooleanValue ignoreSpeedyBlocks;
 
+        public final DoubleValue mountHealingAmount;
+
         Common(ForgeConfigSpec.Builder builder) {
             builder.push("GadgetSettings");
                 builder.push("MossyMirrorSettings");
@@ -34,15 +36,22 @@ public class ModConfig {
             builder.pop();
 
             builder.push("EnchantmentSettings");
-                defaultFriction = builder
-                        .comment("The \"default\" friction of a block. This is used by the Friction enchantment as the maximum friction for all blocks the player with the enchantment stands on. Higher values mean more slippery.")
-                        .defineInRange("defaultFriction", 0.6, 0.01, 1);
-                slipperyFriction = builder
-                        .comment("The friction for slippery blocks. This is used by the Curse of Slipperiness as the minimum friction value for all blocks the player with the curse stands on. Default value is equivalent to the friction of ice.")
-                                .defineInRange("slipperyFriction", 0.98, 0.01, 1);
-                ignoreSpeedyBlocks = builder
-                        .comment("Whether the Curse of Slipperiness should ignore blocks with a speedFactor greater than 1. This prevents a bug relating to achieving huge amounts of speed, but can be turned off for the purpose of fun. I will not help with issues relating to the Curse of Slipperiness if this is set to false.")
-                                .define("ignoreSpeedyBlocks", true);
+                builder.push("Boots Enchantments");
+                    defaultFriction = builder
+                            .comment("The \"default\" friction of a block. This is used by the Friction enchantment as the maximum friction for all blocks the player with the enchantment stands on. Higher values mean more slippery.")
+                            .defineInRange("defaultFriction", 0.6, 0.01, 1);
+                    slipperyFriction = builder
+                            .comment("The friction for slippery blocks. This is used by the Curse of Slipperiness as the minimum friction value for all blocks the player with the curse stands on. Default value is equivalent to the friction of ice.")
+                            .defineInRange("slipperyFriction", 0.98, 0.01, 1);
+                    ignoreSpeedyBlocks = builder
+                            .comment("Whether the Curse of Slipperiness should ignore blocks with a speedFactor greater than 1. This prevents a bug relating to achieving huge amounts of speed, but can be turned off for the purpose of fun. I will not help with issues relating to the Curse of Slipperiness if this is set to false.")
+                            .define("ignoreSpeedyBlocks", true);
+                builder.pop();
+                builder.push("Carrot on a Stick Enchantments");
+                    mountHealingAmount = builder
+                            .comment("The amount of health healed when the item is used. Multiplied by the enchantment level.")
+                            .defineInRange("mountHealingAmount", 2, 0, Float.MAX_VALUE);
+                builder.pop();
             builder.pop();
         }
     }
