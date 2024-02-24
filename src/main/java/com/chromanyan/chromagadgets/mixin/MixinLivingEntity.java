@@ -30,7 +30,7 @@ public abstract class MixinLivingEntity {
                 && EnchantmentHelper.getEnchantmentLevel(ModEnchantments.FRICTION.get(), livingEntity) > 0
         ) return chromaGadgets$config.defaultFriction.get().floatValue();
 
-        if (livingEntity.getBlockSpeedFactor() > 1.0F) return originalReturn;
+        if (livingEntity.getBlockSpeedFactor() > 1.0F && chromaGadgets$config.ignoreSpeedyBlocks.get()) return originalReturn;
 
         if (
                 EnchantmentHelper.getEnchantmentLevel(ModEnchantments.SLIPPERINESS.get(), livingEntity) > 0
