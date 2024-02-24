@@ -2,6 +2,7 @@ package com.chromanyan.chromagadgets.items;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
@@ -43,6 +44,7 @@ public class ItemWhiteFlag extends Item {
 
         raid.status = Raid.RaidStatus.LOSS; // i needed two access transformers for this
 
+        player.awardStat(Stats.ITEM_USED.get(this));
         return InteractionResultHolder.sidedSuccess(itemstack, level.isClientSide());
     }
 }
