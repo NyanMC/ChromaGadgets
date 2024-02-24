@@ -24,6 +24,9 @@
   "enchantment.chromagadgets.slipperiness": "Curse of Slipperiness",
   "enchantment.chromagadgets.slipperiness.desc": "Causes the wearer to slide around as if they were always on ice.",
 
+  "enchantment.chromagadgets.mount_healing": "Mount Healing",
+  "enchantment.chromagadgets.mount_healing.desc": "Heals the mount when boosting it.",
+
   "item.chromagadgets.mossy_mirror": "Mossy Mirror",
   "tooltip.chromagadgets.mossy_mirror.1": "When in the inventory of a player, shows the coordinates of their most recent death",
   "tooltip.chromagadgets.mossy_mirror.2": "The mirror points to the following coordinates:",

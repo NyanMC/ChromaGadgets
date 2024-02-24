@@ -2,6 +2,7 @@ package com.chromanyan.chromagadgets.init;
 
 import com.chromanyan.chromagadgets.ChromaGadgets;
 import com.chromanyan.chromagadgets.enchantments.EnchantmentFriction;
+import com.chromanyan.chromagadgets.enchantments.EnchantmentMountHealing;
 import com.chromanyan.chromagadgets.enchantments.EnchantmentSlipperiness;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraftforge.registries.DeferredRegister;
@@ -13,4 +14,5 @@ public class ModEnchantments {
 
     public static final RegistryObject<Enchantment> FRICTION = ENCHANTMENTS_REGISTRY.register("friction", EnchantmentFriction::new);
     public static final RegistryObject<Enchantment> SLIPPERINESS = ENCHANTMENTS_REGISTRY.register("slipperiness", EnchantmentSlipperiness::new);
+    public static final RegistryObject<Enchantment> MOUNT_HEALING = ENCHANTMENTS_REGISTRY.register("mount_healing", EnchantmentMountHealing::new);
 }

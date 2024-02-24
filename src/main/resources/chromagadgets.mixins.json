@@ -5,6 +5,7 @@
   "compatibilityLevel": "JAVA_8",
   "refmap": "chromagadgets.refmap.json",
   "mixins": [
+    "MixinFoodOnAStickItem",
     "MixinLivingEntity"
   ],
   "client": [
