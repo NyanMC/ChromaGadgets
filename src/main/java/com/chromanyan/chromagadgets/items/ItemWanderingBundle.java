@@ -196,7 +196,7 @@ public class ItemWanderingBundle extends BundleItem {
     }
 
     private static Optional<CompoundTag> getMatchingItem(ItemStack p_150757_, ListTag p_150758_) {
-        return p_150757_.is(Items.BUNDLE) ? Optional.empty() : p_150758_.stream().filter(CompoundTag.class::isInstance).map(CompoundTag.class::cast).filter((p_186350_) -> ItemStack.isSameItemSameTags(ItemStack.of(p_186350_), p_150757_)).findFirst();
+        return p_150757_.getItem() instanceof BundleItem ? Optional.empty() : p_150758_.stream().filter(CompoundTag.class::isInstance).map(CompoundTag.class::cast).filter((p_186350_) -> ItemStack.isSameItemSameTags(ItemStack.of(p_186350_), p_150757_)).findFirst();
     }
 
     private static Optional<ItemStack> removeOne(ItemStack p_150781_) {
@@ -245,6 +245,6 @@ public class ItemWanderingBundle extends BundleItem {
 
     @Override
     public boolean canFitInsideContainerItems() {
-        return false; // we're not about to deal with bundle recursion
+        return config.canNestWanderingBundle.get(); // we're not about to deal with bundle recursion
     }
 }

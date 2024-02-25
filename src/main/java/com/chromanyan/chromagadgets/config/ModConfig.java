@@ -16,6 +16,7 @@ public class ModConfig {
 
         public final IntValue wanderingBundleCapacity;
         public final BooleanValue dropWanderingBundle;
+        public final BooleanValue canNestWanderingBundle;
         public final IntValue wanderingBundleMinItemsGenerated;
         public final IntValue wanderingBundleMaxItemsGenerated;
 
@@ -45,6 +46,9 @@ public class ModConfig {
                     dropWanderingBundle = builder
                             .comment("Should the Wandering Bundle be dropped from Wandering Traders?")
                             .define("dropWanderingBundle", true);
+                    canNestWanderingBundle = builder
+                            .comment("Should it be possible to put a Wandering Bundle inside container items? WARNING: Setting this to true will lead to an infinite storage exploit involving vanilla Bundles and Wandering Bundles. I am not responsible for related issues if this is turned off.")
+                            .define("canNestWanderingBundle", false);
                     wanderingBundleMinItemsGenerated = builder
                             .comment("If this is higher than the below config option, this value takes priority. Explained further in the below config option.")
                             .defineInRange("wanderingBundleMinItemsGenerated", 1, 0, Integer.MAX_VALUE);
