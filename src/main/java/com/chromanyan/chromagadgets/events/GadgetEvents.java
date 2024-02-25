@@ -1,5 +1,6 @@
 package com.chromanyan.chromagadgets.events;
 
+import com.chromanyan.chromagadgets.config.ModConfig;
 import com.chromanyan.chromagadgets.init.ModItems;
 import com.chromanyan.chromagadgets.items.ItemWanderingBundle;
 import com.chromanyan.chromagadgets.packets.CGPacketHandler;
@@ -28,6 +29,7 @@ public class GadgetEvents {
     public static HashMap<UUID, Integer> playerWarningLevels = new HashMap<>();
 
     private static final Random rand = new Random();
+    private static final ModConfig.Common config = ModConfig.COMMON;
 
     @SubscribeEvent
     public void playerTick(TickEvent.PlayerTickEvent event) {
@@ -66,9 +68,11 @@ public class GadgetEvents {
     public void mobDrops(LivingDropsEvent event) {
         LivingEntity entity = event.getEntity();
 
-        if (entity instanceof WanderingTrader) {
+        if (entity instanceof WanderingTrader && config.dropWanderingBundle.get()) {
             ItemStack bundle = new ItemStack(ModItems.WANDERING_BUNDLE.get());
-            ItemWanderingBundle.addRandomTraderLoot(bundle, entity, rand.nextInt(0, 5) + 1); //TODO configurability
+            if (config.wanderingBundleMaxItemsGenerated.get() > 0) {
+                ItemWanderingBundle.addRandomTraderLoot(bundle, entity, rand.nextInt(config.wanderingBundleMaxItemsGenerated.get()) + 1);
+            }
             event.getDrops().add(entity.spawnAtLocation(bundle));
         }
     }

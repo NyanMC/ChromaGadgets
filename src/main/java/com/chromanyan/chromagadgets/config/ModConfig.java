@@ -14,6 +14,10 @@ public class ModConfig {
         public final IntValue mossyMirrorWeaknessAmplifier;
         public final IntValue mossyMirrorWeaknessDuration;
 
+        public final IntValue wanderingBundleCapacity;
+        public final IntValue wanderingBundleMaxItemsGenerated;
+        public final BooleanValue dropWanderingBundle;
+
         public final DoubleValue defaultFriction;
         public final DoubleValue slipperyFriction;
         public final BooleanValue ignoreSpeedyBlocks;
@@ -32,6 +36,17 @@ public class ModConfig {
                     mossyMirrorWeaknessDuration = builder
                             .comment("The duration for the Weakness effect applied when using the Mossy Mirror.")
                             .defineInRange("mossyMirrorWeaknessDuration", 2400, 0, Integer.MAX_VALUE);
+                builder.pop();
+                builder.push("WanderingBundleSettings");
+                    wanderingBundleCapacity = builder
+                            .comment("The amount of items a Wandering Bundle can hold.")
+                            .defineInRange("wanderingBundleCapacity", 128, 1, Integer.MAX_VALUE);
+                    dropWanderingBundle = builder
+                            .comment("Should the Wandering Bundle be dropped from Wandering Traders?")
+                            .define("dropWanderingBundle", true);
+                    wanderingBundleMaxItemsGenerated = builder
+                            .comment("When a Wandering Bundle is dropped, it fills itself with a random amount of stacks (pulled from Wandering Trader trades) ranging from 1 to this number. Set to 0 to disable. This setting is ignored if dropWanderingBundle is set to false.")
+                            .defineInRange("wanderingBundleMaxItemsGenerated", 5, 0, Integer.MAX_VALUE);
                 builder.pop();
             builder.pop();
 

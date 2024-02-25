@@ -1,6 +1,7 @@
 package com.chromanyan.chromagadgets.items;
 
 import com.chromanyan.chromagadgets.ChromaGadgets;
+import com.chromanyan.chromagadgets.config.ModConfig;
 import com.chromanyan.chromagadgets.init.ModItems;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.renderer.item.ItemProperties;
@@ -30,6 +31,7 @@ import java.util.stream.Stream;
 
 public class ItemWanderingBundle extends BundleItem {
     private static final RandomSource random = RandomSource.create();
+    private static final ModConfig.Common config = ModConfig.COMMON;
 
     public ItemWanderingBundle() {
         super(new Item.Properties()
@@ -70,7 +72,7 @@ public class ItemWanderingBundle extends BundleItem {
     }
 
     private static int getCapacity(@SuppressWarnings("unused") ItemStack itemStack) {
-        return 128; //TODO configurability?
+        return config.wanderingBundleCapacity.get();
     }
 
     @Override
@@ -222,7 +224,15 @@ public class ItemWanderingBundle extends BundleItem {
     public @NotNull Optional<TooltipComponent> getTooltipImage(@NotNull ItemStack p_150775_) {
         NonNullList<ItemStack> nonnulllist = NonNullList.create();
         getContents(p_150775_).forEach(nonnulllist::add);
-        return Optional.of(new BundleTooltip(nonnulllist, getContentWeight(p_150775_) / (getCapacity(p_150775_) / 64))); // trick the game into thinking the bundle
+        int weight = getContentWeight(p_150775_);
+        // so the bundle tooltip is hardcoded to display an x if the weight is 64, no matter what. the solution? lie
+        if (weight >= getCapacity(p_150775_)) {
+            return Optional.of(new BundleTooltip(nonnulllist, 64));
+        } else if (getCapacity(p_150775_) <= 64) {
+            return Optional.of(new BundleTooltip(nonnulllist, getContentWeight(p_150775_))); // we don't need to modify behavior
+        } else {
+            return Optional.of(new BundleTooltip(nonnulllist, getContentWeight(p_150775_) / ((getCapacity(p_150775_) / 64) + 1))); // close enough
+        }
     }
 
     private void playRemoveOneSound(Entity p_186343_) {
