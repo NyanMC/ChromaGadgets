@@ -62,7 +62,7 @@ public class ItemWanderingBundle extends BundleItem {
             }
             ItemStack lootItemStack = merchantOffer.getResult();
 
-            add(bundle, lootItemStack);
+            if (add(bundle, lootItemStack) == 0) break; // this is a rare edge case, unless the user sets the relevant config value to a large value
         }
     }
 

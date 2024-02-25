@@ -70,8 +70,17 @@ public class GadgetEvents {
 
         if (entity instanceof WanderingTrader && config.dropWanderingBundle.get()) {
             ItemStack bundle = new ItemStack(ModItems.WANDERING_BUNDLE.get());
-            if (config.wanderingBundleMaxItemsGenerated.get() > 0) {
-                ItemWanderingBundle.addRandomTraderLoot(bundle, entity, rand.nextInt(config.wanderingBundleMaxItemsGenerated.get()) + 1);
+            int min = config.wanderingBundleMinItemsGenerated.get();
+            int max = config.wanderingBundleMaxItemsGenerated.get();
+            if (max > 0) {
+                int count;
+                if (min >= max) {
+                    count = min;
+                } else {
+                    count = rand.nextInt(min, max + 1);
+                }
+
+                ItemWanderingBundle.addRandomTraderLoot(bundle, entity, count);
             }
             event.getDrops().add(entity.spawnAtLocation(bundle));
         }
