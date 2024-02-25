@@ -10,6 +10,7 @@ import com.chromanyan.chromagadgets.init.ModEnchantments;
 import com.chromanyan.chromagadgets.init.ModItems;
 import com.chromanyan.chromagadgets.items.ItemSculkometer;
 import com.chromanyan.chromagadgets.items.ItemShriekerHorn;
+import com.chromanyan.chromagadgets.items.ItemWanderingBundle;
 import com.chromanyan.chromagadgets.packets.CGPacketHandler;
 import com.chromanyan.chromagadgets.packets.client.PacketWarningLevel;
 import com.mojang.logging.LogUtils;
@@ -33,8 +34,7 @@ public class ChromaGadgets {
     // Define mod id in a common place for everything to reference
     public static final String MODID = "chromagadgets";
     // Directly reference a slf4j logger
-    @SuppressWarnings("unused")
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
 
     public ChromaGadgets() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -74,5 +74,6 @@ public class ChromaGadgets {
     private void clientSetup(final FMLClientSetupEvent event) {
         ItemSculkometer.registerVariants();
         ItemShriekerHorn.registerVariants();
+        ItemWanderingBundle.registerVariants();
     }
 }
