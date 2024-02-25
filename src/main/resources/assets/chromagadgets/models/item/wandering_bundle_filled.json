@@ -1,0 +1,6 @@
+{
+    "parent": "chromagadgets:item/wandering_bundle",
+    "textures": {
+        "layer0": "chromagadgets:item/wandering_bundle_filled"
+    }
+}

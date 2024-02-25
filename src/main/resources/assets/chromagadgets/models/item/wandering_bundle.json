@@ -1,0 +1,9 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "chromagadgets:item/wandering_bundle"
+    },
+    "overrides": [
+        { "predicate": { "chromagadgets:filled": 0.0000001 }, "model": "chromagadgets:item/wandering_bundle_filled" }
+    ]
+}
