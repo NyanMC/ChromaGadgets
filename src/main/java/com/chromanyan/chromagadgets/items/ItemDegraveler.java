@@ -54,7 +54,6 @@ public class ItemDegraveler extends ShovelItem {
             BlockPos newBlockPos = lastBlockPos.above();
             lastBlockPos = newBlockPos;
 
-            System.out.println(newBlockPos.getY());
             BlockState newBlockState = level.getBlockState(newBlockPos);
             // make sure this is even a valid block for the degraveler
             if (shouldStopVeining(itemStack, newBlockState)) break;
