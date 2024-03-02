@@ -18,6 +18,9 @@
 
   "item.chromagadgets.wandering_bundle": "Wanderer's Bundle",
 
+  "item.chromagadgets.degraveler": "Degraveler",
+  "tooltip.chromagadgets.degraveler.1": "Breaking a falling block automatically breaks all falling blocks above it",
+
   "block.chromagadgets.asphalt": "Asphalt",
 
   "enchantment.chromagadgets.friction": "Friction",

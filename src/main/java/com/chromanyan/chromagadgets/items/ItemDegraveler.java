@@ -1,20 +1,30 @@
 package com.chromanyan.chromagadgets.items;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ShovelItem;
 import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.FallingBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class ItemDegraveler extends ShovelItem {
 
     public ItemDegraveler(Tier p_43114_, Properties p_43117_) {
         super(p_43114_, 1.5F, -3.0F, p_43117_);
+    }
+
+    @Override
+    public void appendHoverText(@NotNull ItemStack itemStack, @Nullable Level level, List<Component> list, @NotNull TooltipFlag flag) {
+        list.add(Component.translatable("tooltip.chromagadgets.degraveler.1"));
     }
 
     private boolean shouldStopVeining(ItemStack itemStack, BlockState blockState) {
