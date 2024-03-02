@@ -5,6 +5,7 @@ import com.chromanyan.chromagadgets.items.*;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Tiers;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -20,6 +21,8 @@ public class ModItems {
     public static final RegistryObject<Item> MOSSY_MIRROR = ITEMS_REGISTRY.register("mossy_mirror", ItemMossyMirror::new);
     public static final RegistryObject<Item> BASTION_APPLE = ITEMS_REGISTRY.register("bastion_apple", ItemBastionApple::new);
     public static final RegistryObject<Item> WANDERING_BUNDLE = ITEMS_REGISTRY.register("wandering_bundle", ItemWanderingBundle::new);
+    public static final RegistryObject<Item> DEGRAVELER = ITEMS_REGISTRY.register("degraveler",
+            () -> new ItemDegraveler(Tiers.IRON, new Item.Properties().tab(CreativeModeTab.TAB_TOOLS)));
 
     // blockitems
     public static final RegistryObject<Item> ASPHALT = ITEMS_REGISTRY.register("asphalt",
