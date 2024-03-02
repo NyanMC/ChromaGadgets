@@ -73,5 +73,9 @@ public class CGRecipes extends RecipeProvider {
         UpgradeRecipeBuilder.smithing(Ingredient.of(Items.APPLE), Ingredient.of(Items.GILDED_BLACKSTONE), ModItems.BASTION_APPLE.get())
                 .unlocks("has_gilded_blackstone", has(Items.GILDED_BLACKSTONE))
                 .save(consumer, new ResourceLocation(ChromaGadgets.MODID, "bastion_apple"));
+
+        UpgradeRecipeBuilder.smithing(Ingredient.of(Items.IRON_SHOVEL), Ingredient.of(Items.FLINT), ModItems.DEGRAVELER.get())
+                .unlocks("degraveler", has(Items.IRON_SHOVEL))
+                .save(consumer, new ResourceLocation(ChromaGadgets.MODID, "degraveler"));
     }
 }

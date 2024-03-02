@@ -24,5 +24,6 @@ public class CGModels extends ItemModelProvider {
         basicModel("arcane_reroll");
         heldModel("mossy_mirror");
         basicModel("bastion_apple");
+        heldModel("degraveler");
     }
 }
