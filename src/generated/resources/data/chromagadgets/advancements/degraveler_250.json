@@ -1,0 +1,32 @@
+{
+  "parent": "chromagadgets:degraveler_5",
+  "criteria": {
+    "vein_250": {
+      "conditions": {
+        "required_amount": 250
+      },
+      "trigger": "chromagadgets:degraveler_vein"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.chromagadgets.degraveler_250.description"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "chromagadgets:degraveler",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.chromagadgets.degraveler_250.title"
+    }
+  },
+  "requirements": [
+    [
+      "vein_250"
+    ]
+  ]
+}

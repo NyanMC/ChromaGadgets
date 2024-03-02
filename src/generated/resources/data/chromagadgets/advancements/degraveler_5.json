@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:story/iron_tools",
+  "criteria": {
+    "vein_5": {
+      "conditions": {
+        "required_amount": 5
+      },
+      "trigger": "chromagadgets:degraveler_vein"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.chromagadgets.degraveler_5.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "chromagadgets:degraveler",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.chromagadgets.degraveler_5.title"
+    }
+  },
+  "requirements": [
+    [
+      "vein_5"
+    ]
+  ]
+}

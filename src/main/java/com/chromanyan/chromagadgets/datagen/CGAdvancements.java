@@ -2,9 +2,11 @@ package com.chromanyan.chromagadgets.datagen;
 
 import com.chromanyan.chromagadgets.ChromaGadgets;
 import com.chromanyan.chromagadgets.init.ModItems;
+import com.chromanyan.chromagadgets.triggers.DegravelerVeinTrigger;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.CriterionTriggerInstance;
 import net.minecraft.advancements.FrameType;
+import net.minecraft.advancements.critereon.EntityPredicate;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.data.DataGenerator;
@@ -65,6 +67,36 @@ public class CGAdvancements extends AdvancementProvider {
                 )
                 .parent(new ResourceLocation("adventure/avoid_vibration"))
                 .save(consumer, new ResourceLocation(ChromaGadgets.MODID, "charged_mossy_mirror"), fileHelper);
+
+        Advancement degraveler5 = Advancement.Builder.advancement()
+                .addCriterion("vein_5", new DegravelerVeinTrigger.TriggerInstance(EntityPredicate.Composite.ANY, 5))
+                .display(
+                        ModItems.DEGRAVELER.get(),
+                        Component.translatable("advancement.chromagadgets.degraveler_5.title"),
+                        Component.translatable("advancement.chromagadgets.degraveler_5.description"),
+                        null,
+                        FrameType.TASK,
+                        true,
+                        true,
+                        false
+                )
+                .parent(new ResourceLocation("story/iron_tools"))
+                .save(consumer, new ResourceLocation(ChromaGadgets.MODID, "degraveler_5"), fileHelper);
+
+        Advancement degraveler250 = Advancement.Builder.advancement()
+                .addCriterion("vein_250", new DegravelerVeinTrigger.TriggerInstance(EntityPredicate.Composite.ANY, 250))
+                .display(
+                        ModItems.DEGRAVELER.get(),
+                        Component.translatable("advancement.chromagadgets.degraveler_250.title"),
+                        Component.translatable("advancement.chromagadgets.degraveler_250.description"),
+                        null,
+                        FrameType.CHALLENGE,
+                        true,
+                        true,
+                        false
+                )
+                .parent(degraveler5)
+                .save(consumer, new ResourceLocation(ChromaGadgets.MODID, "degraveler_250"), fileHelper);
     }
 
     private CriterionTriggerInstance hasItem(ItemLike item) {

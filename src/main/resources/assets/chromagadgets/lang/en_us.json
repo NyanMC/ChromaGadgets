@@ -43,5 +43,9 @@
   "death.attack.chromagadgets.recall.player": "%1$s was killed by death recall whilst trying to escape %2$s",
 
   "advancement.chromagadgets.charged_mossy_mirror.title": "Type \"SICK\" to go here now!",
-  "advancement.chromagadgets.charged_mossy_mirror.description": "Charge a Mossy Mirror by using it in a swamp"
+  "advancement.chromagadgets.charged_mossy_mirror.description": "Charge a Mossy Mirror by using it in a swamp",
+  "advancement.chromagadgets.degraveler_5.title": "Degraveled",
+  "advancement.chromagadgets.degraveler_5.description": "Use a Degraveler to break five or more falling blocks at the same time",
+  "advancement.chromagadgets.degraveler_250.title": "Good Riddance",
+  "advancement.chromagadgets.degraveler_250.description": "Use a Degraveler to break 250 or more falling blocks at the same time"
 }

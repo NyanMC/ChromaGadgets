@@ -13,7 +13,9 @@ import com.chromanyan.chromagadgets.items.ItemShriekerHorn;
 import com.chromanyan.chromagadgets.items.ItemWanderingBundle;
 import com.chromanyan.chromagadgets.packets.CGPacketHandler;
 import com.chromanyan.chromagadgets.packets.client.PacketWarningLevel;
+import com.chromanyan.chromagadgets.triggers.DegravelerVeinTrigger;
 import com.mojang.logging.LogUtils;
+import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -67,6 +69,8 @@ public class ChromaGadgets {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         MinecraftForge.EVENT_BUS.register(new GadgetEvents());
+
+        CriteriaTriggers.register(DegravelerVeinTrigger.INSTANCE);
 
         CGPacketHandler.INSTANCE.registerMessage(0, PacketWarningLevel.class, PacketWarningLevel::encode, PacketWarningLevel::decode, PacketWarningLevel::handle);
     }

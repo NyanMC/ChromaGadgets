@@ -1,8 +1,10 @@
 package com.chromanyan.chromagadgets.items;
 
 import com.chromanyan.chromagadgets.config.ModConfig;
+import com.chromanyan.chromagadgets.triggers.DegravelerVeinTrigger;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -67,6 +69,11 @@ public class ItemDegraveler extends ShovelItem {
             }
 
             count++;
+        }
+
+        if (player instanceof ServerPlayer serverPlayer) {
+            System.out.println(count);
+            DegravelerVeinTrigger.INSTANCE.trigger(serverPlayer, count);
         }
 
         return true;
