@@ -1,5 +1,6 @@
 package com.chromanyan.chromagadgets.items;
 
+import com.chromanyan.chromagadgets.config.ModConfig;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.LivingEntity;
@@ -17,6 +18,8 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class ItemDegraveler extends ShovelItem {
+
+    ModConfig.Common config = ModConfig.COMMON;
 
     public ItemDegraveler(Tier p_43114_, Properties p_43117_) {
         super(p_43114_, 1.5F, -3.0F, p_43117_);
@@ -43,9 +46,11 @@ public class ItemDegraveler extends ShovelItem {
 
         int count = 0;
         BlockPos lastBlockPos = blockPos;
+        final int limit = config.degravelerVeinLimit.get() > -1 ? config.degravelerVeinLimit.get() : Integer.MAX_VALUE;
 
         count++;
-        while (count + blockPos.getY() <= level.getMaxBuildHeight()) { // there can't possibly be any more blocks past the max build height
+        // there can't possibly be any more blocks past the max build height
+        while (count + blockPos.getY() <= level.getMaxBuildHeight() && (config.degravelerVeinLimit.get() < limit)) {
             BlockPos newBlockPos = lastBlockPos.above();
             lastBlockPos = newBlockPos;
 
