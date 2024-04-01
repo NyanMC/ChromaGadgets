@@ -15,6 +15,7 @@ public class ModConfig {
         public final IntValue mossyMirrorWeaknessDuration;
 
         public final IntValue wanderingBundleCapacity;
+        public final IntValue maxStackSize;
         public final BooleanValue dropWanderingBundle;
         public final BooleanValue canNestWanderingBundle;
         public final IntValue wanderingBundleMinItemsGenerated;
@@ -45,6 +46,9 @@ public class ModConfig {
                     wanderingBundleCapacity = builder
                             .comment("The amount of items a Wandering Bundle can hold.")
                             .defineInRange("wanderingBundleCapacity", 128, 1, Integer.MAX_VALUE);
+                    maxStackSize = builder
+                            .comment("The X in the equation X divided by the item's maximum stack size used in order to calculate that item's weight. Useful when working with mods that change stack limits.")
+                            .defineInRange("maxStackSize", 64, 1, Integer.MAX_VALUE);
                     dropWanderingBundle = builder
                             .comment("Should the Wandering Bundle be dropped from Wandering Traders?")
                             .define("dropWanderingBundle", true);

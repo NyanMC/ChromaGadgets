@@ -187,11 +187,11 @@ public class ItemWanderingBundle extends BundleItem {
             if ((p_150777_.is(Items.BEEHIVE) || p_150777_.is(Items.BEE_NEST)) && p_150777_.hasTag()) {
                 CompoundTag compoundtag = BlockItem.getBlockEntityData(p_150777_);
                 if (compoundtag != null && !compoundtag.getList("Bees", 10).isEmpty()) {
-                    return 64;
+                    return config.maxStackSize.get();
                 }
             }
 
-            return Math.max(64 / p_150777_.getMaxStackSize(), 1);
+            return Math.max(config.maxStackSize.get() / p_150777_.getMaxStackSize(), 1);
         }
     }
 
