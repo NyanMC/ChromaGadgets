@@ -191,7 +191,7 @@ public class ItemWanderingBundle extends BundleItem {
                 }
             }
 
-            return 64 / p_150777_.getMaxStackSize();
+            return Math.max(64 / p_150777_.getMaxStackSize(), 1);
         }
     }
 
