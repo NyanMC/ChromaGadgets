@@ -12,7 +12,7 @@ buildscript {
 plugins {
     id 'eclipse'
     id 'idea'
-    id 'net.minecraftforge.gradle' version '[6.0,6.2)'
+    id 'net.neoforged.gradle' version '[6.0.18,6.2)'
 }
 
 apply plugin: 'org.spongepowered.mixin'
@@ -182,7 +182,7 @@ dependencies {
     // The "userdev" classifier will be requested and setup by ForgeGradle.
     // If the group id is "net.minecraft" and the artifact id is one of ["client", "server", "joined"],
     // then special handling is done to allow a setup of a vanilla dependency without the use of an external repository.
-    minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+    minecraft "net.neoforged:forge:${minecraft_version}-${forge_version}"
 
     // Example mod dependency with JEI - using fg.deobf() ensures the dependency is remapped to your development mappings
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
@@ -200,11 +200,7 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 
     runtimeOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
-    runtimeOnly fg.deobf("curse.maven:project-240630:3951643") // just enough resources 1.1.0.179
-    runtimeOnly fg.deobf("curse.maven:catalogue-459701:4171024") // catalogue 1.7.0
-
-    runtimeOnly fg.deobf("curse.maven:bookshelf-228525:4556697") // bookshelf 16.3.20
-    runtimeOnly fg.deobf("curse.maven:enchantment-descriptions-250419:4277356") // enchantment descriptions 13.0.14
+    runtimeOnly fg.deobf("curse.maven:just-enough-resources-jer-240630:5057220")
 
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }
