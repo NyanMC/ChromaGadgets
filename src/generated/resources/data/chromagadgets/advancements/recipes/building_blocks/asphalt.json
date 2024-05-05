@@ -30,5 +30,6 @@
     "recipes": [
       "chromagadgets:asphalt"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

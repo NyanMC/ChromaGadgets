@@ -1,11 +1,14 @@
 {
-  "type": "minecraft:smithing",
-  "addition": {
-    "item": "minecraft:gilded_blackstone"
-  },
-  "base": {
-    "item": "minecraft:apple"
-  },
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:apple"
+    },
+    {
+      "item": "minecraft:gilded_blackstone"
+    }
+  ],
   "result": {
     "item": "chromagadgets:bastion_apple"
   }

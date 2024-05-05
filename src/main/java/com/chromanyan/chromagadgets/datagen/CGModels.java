@@ -1,13 +1,13 @@
 package com.chromanyan.chromagadgets.datagen;
 
 import com.chromanyan.chromagadgets.ChromaGadgets;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class CGModels extends ItemModelProvider {
-    public CGModels(DataGenerator generator, ExistingFileHelper existingFileHelper) {
-        super(generator, ChromaGadgets.MODID, existingFileHelper);
+    public CGModels(PackOutput output, ExistingFileHelper existingFileHelper) {
+        super(output, ChromaGadgets.MODID, existingFileHelper);
     }
 
     private void basicModel(String name) {

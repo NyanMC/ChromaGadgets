@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "key": {
     "e": {
       "tag": "forge:gems/emerald"
@@ -18,5 +19,6 @@
   ],
   "result": {
     "item": "chromagadgets:white_flag"
-  }
+  },
+  "show_notification": true
 }

@@ -37,7 +37,8 @@ public class GadgetEvents {
             return;
         Player player = event.player;
         UUID uuid = player.getUUID();
-        int warningLevel = player.getWardenSpawnTracker().getWarningLevel();
+        if (player.getWardenSpawnTracker().isEmpty()) return;
+        int warningLevel = player.getWardenSpawnTracker().get().getWarningLevel();
 
         if (player instanceof ServerPlayer serverPlayer) {
             if (!playerWarningLevels.containsKey(uuid)) {

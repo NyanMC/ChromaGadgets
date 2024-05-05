@@ -26,5 +26,6 @@
     "recipes": [
       "chromagadgets:white_flag"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

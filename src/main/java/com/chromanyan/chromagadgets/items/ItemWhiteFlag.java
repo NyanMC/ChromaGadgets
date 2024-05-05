@@ -20,7 +20,6 @@ import java.util.List;
 public class ItemWhiteFlag extends Item {
     public ItemWhiteFlag() {
         super(new Item.Properties()
-                .tab(CreativeModeTab.TAB_TOOLS)
                 .stacksTo(1));
     }
 

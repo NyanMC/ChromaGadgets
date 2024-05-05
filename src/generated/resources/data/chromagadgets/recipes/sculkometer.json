@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "key": {
     "r": {
       "tag": "forge:dusts/redstone"
@@ -15,5 +16,6 @@
   ],
   "result": {
     "item": "chromagadgets:sculkometer"
-  }
+  },
+  "show_notification": true
 }

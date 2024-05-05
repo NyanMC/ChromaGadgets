@@ -30,5 +30,6 @@
     "recipes": [
       "chromagadgets:bastion_apple"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

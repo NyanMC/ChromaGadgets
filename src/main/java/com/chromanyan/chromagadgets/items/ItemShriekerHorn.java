@@ -28,7 +28,6 @@ import java.util.List;
 public class ItemShriekerHorn extends Item {
     public ItemShriekerHorn() {
         super(new Item.Properties()
-                .tab(CreativeModeTab.TAB_MISC)
                 .stacksTo(1));
     }
 
@@ -60,8 +59,9 @@ public class ItemShriekerHorn extends Item {
         }
 
         if (level instanceof ServerLevel serverLevel && player instanceof ServerPlayer serverPlayer) {
+            if (serverPlayer.getWardenSpawnTracker().isEmpty()) return InteractionResultHolder.sidedSuccess(itemstack, level.isClientSide());
             if (WardenSpawnTracker.tryWarn(serverLevel, player.blockPosition(), serverPlayer).isPresent()) {
-                int warningLevel = serverPlayer.getWardenSpawnTracker().getWarningLevel();
+                int warningLevel = serverPlayer.getWardenSpawnTracker().get().getWarningLevel();
                 level.gameEvent(GameEvent.SHRIEK, player.position(), GameEvent.Context.of(player));
                 WardenSpawnHandler.tryRespond(serverLevel, player.blockPosition(), warningLevel);
             }

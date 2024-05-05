@@ -35,7 +35,6 @@ public class ItemWanderingBundle extends BundleItem {
 
     public ItemWanderingBundle() {
         super(new Item.Properties()
-                .tab(CreativeModeTab.TAB_TOOLS)
                 .rarity(Rarity.UNCOMMON)
                 .stacksTo(1));
     }
@@ -236,11 +235,11 @@ public class ItemWanderingBundle extends BundleItem {
     }
 
     private void playRemoveOneSound(Entity p_186343_) {
-        p_186343_.playSound(SoundEvents.BUNDLE_REMOVE_ONE, 0.8F, 0.8F + p_186343_.getLevel().getRandom().nextFloat() * 0.4F);
+        p_186343_.playSound(SoundEvents.BUNDLE_REMOVE_ONE, 0.8F, 0.8F + p_186343_.getCommandSenderWorld().getRandom().nextFloat() * 0.4F);
     }
 
     private void playInsertSound(Entity p_186352_) {
-        p_186352_.playSound(SoundEvents.BUNDLE_INSERT, 0.8F, 0.8F + p_186352_.getLevel().getRandom().nextFloat() * 0.4F);
+        p_186352_.playSound(SoundEvents.BUNDLE_INSERT, 0.8F, 0.8F + p_186352_.getCommandSenderWorld().getRandom().nextFloat() * 0.4F);
     }
 
     @Override

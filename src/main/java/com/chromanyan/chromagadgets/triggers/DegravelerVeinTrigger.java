@@ -15,7 +15,7 @@ public class DegravelerVeinTrigger extends SimpleCriterionTrigger<DegravelerVein
     public static final DegravelerVeinTrigger INSTANCE = new DegravelerVeinTrigger();
 
     @Override
-    protected @NotNull TriggerInstance createInstance(@Nonnull JsonObject json, @Nonnull EntityPredicate.Composite playerPred, @NotNull DeserializationContext conditions) {
+    protected @NotNull TriggerInstance createInstance(@Nonnull JsonObject json, @Nonnull ContextAwarePredicate playerPred, @NotNull DeserializationContext conditions) {
         return new TriggerInstance(playerPred, GsonHelper.getAsInt(json, "required_amount"));
     }
 
@@ -31,7 +31,7 @@ public class DegravelerVeinTrigger extends SimpleCriterionTrigger<DegravelerVein
     public static class TriggerInstance extends AbstractCriterionTriggerInstance {
         private final int requiredAmount;
 
-        public TriggerInstance(EntityPredicate.Composite playerPred, int requiredAmount) {
+        public TriggerInstance(ContextAwarePredicate playerPred, int requiredAmount) {
             super(ID, playerPred);
 
             this.requiredAmount = requiredAmount;

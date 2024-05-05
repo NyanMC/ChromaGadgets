@@ -16,10 +16,14 @@ import com.chromanyan.chromagadgets.packets.client.PacketWarningLevel;
 import com.chromanyan.chromagadgets.triggers.DegravelerVeinTrigger;
 import com.mojang.logging.LogUtils;
 import net.minecraft.advancements.CriteriaTriggers;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -28,6 +32,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
+
+import java.util.concurrent.CompletableFuture;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(ChromaGadgets.MODID)
@@ -45,6 +51,7 @@ public class ChromaGadgets {
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::clientSetup);
         modEventBus.addListener(this::gatherData);
+        modEventBus.addListener(this::addCreative);
 
         ModEnchantments.ENCHANTMENTS_REGISTRY.register(modEventBus);
         ModBlocks.BLOCKS_REGISTRY.register(modEventBus);
@@ -60,11 +67,13 @@ public class ChromaGadgets {
     @SubscribeEvent
     public void gatherData(final GatherDataEvent event) {
         DataGenerator gen = event.getGenerator();
+        PackOutput output = gen.getPackOutput();
+        CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
         ExistingFileHelper efh = event.getExistingFileHelper();
 
-        gen.addProvider(event.includeClient(), new CGModels(gen, efh));
-        gen.addProvider(event.includeServer(), new CGRecipes(gen));
-        gen.addProvider(event.includeServer(), new CGAdvancements(gen, efh));
+        gen.addProvider(event.includeClient(), new CGModels(output, efh));
+        gen.addProvider(event.includeServer(), new CGRecipes(output));
+        gen.addProvider(event.includeServer(), new CGAdvancements(output, lookupProvider, efh));
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
@@ -79,5 +88,23 @@ public class ChromaGadgets {
         ItemSculkometer.registerVariants();
         ItemShriekerHorn.registerVariants();
         ItemWanderingBundle.registerVariants();
+    }
+
+    private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        if (event.getTabKey().equals(CreativeModeTabs.FUNCTIONAL_BLOCKS)) {
+            event.accept(ModItems.ASPHALT.get());
+        }
+        if (event.getTabKey().equals(CreativeModeTabs.TOOLS_AND_UTILITIES)) {
+            event.accept(ModItems.ARCANE_REROLL.get());
+            event.accept(ModItems.WHITE_FLAG.get());
+            event.accept(ModItems.MOSSY_MIRROR.get());
+            event.accept(ModItems.SCULKOMETER.get());
+            event.accept(ModItems.SHRIEKER_HORN.get());
+            event.accept(ModItems.DEGRAVELER.get());
+            event.accept(ModItems.WANDERING_BUNDLE.get());
+        }
+        if (event.getTabKey().equals(CreativeModeTabs.FOOD_AND_DRINKS)) {
+            event.accept(ModItems.BASTION_APPLE.get());
+        }
     }
 }

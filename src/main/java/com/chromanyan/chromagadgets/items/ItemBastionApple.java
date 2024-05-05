@@ -13,7 +13,6 @@ import net.minecraft.world.entity.monster.hoglin.Hoglin;
 import net.minecraft.world.entity.monster.piglin.AbstractPiglin;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -26,7 +25,6 @@ import java.util.List;
 public class ItemBastionApple extends Item {
     public ItemBastionApple() {
         super(new Item.Properties()
-                .tab(CreativeModeTab.TAB_FOOD)
                 .stacksTo(64)
                 .food(new FoodProperties.Builder()
                         .nutrition(8)
@@ -66,7 +64,7 @@ public class ItemBastionApple extends Item {
 
     @Override
     public @NotNull InteractionResult interactLivingEntity(@NotNull ItemStack itemStack, @NotNull Player player, @NotNull LivingEntity livingEntity, @NotNull InteractionHand interactionHand) {
-        boolean isClient = player.level.isClientSide();
+        boolean isClient = player.getCommandSenderWorld().isClientSide();
 
         if (handlePiglinOrHoglin(livingEntity, isClient)) {
             if (isClient) return InteractionResult.SUCCESS;
@@ -75,7 +73,7 @@ public class ItemBastionApple extends Item {
                 itemStack.shrink(1);
             }
 
-            player.level.playSound(null, player.blockPosition(), SoundEvents.ZOMBIE_VILLAGER_CURE, SoundSource.HOSTILE, 0.5F, 1.0F);
+            player.getCommandSenderWorld().playSound(null, player.blockPosition(), SoundEvents.ZOMBIE_VILLAGER_CURE, SoundSource.HOSTILE, 0.5F, 1.0F);
             player.awardStat(Stats.ITEM_USED.get(this));
 
             return InteractionResult.CONSUME;

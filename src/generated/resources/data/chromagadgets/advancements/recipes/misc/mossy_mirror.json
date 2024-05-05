@@ -30,5 +30,6 @@
     "recipes": [
       "chromagadgets:mossy_mirror"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

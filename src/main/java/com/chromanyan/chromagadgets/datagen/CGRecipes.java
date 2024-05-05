@@ -4,25 +4,25 @@ import com.chromanyan.chromagadgets.ChromaGadgets;
 import com.chromanyan.chromagadgets.init.ModItems;
 import net.minecraft.advancements.critereon.EffectsChangedTrigger;
 import net.minecraft.advancements.critereon.MobEffectsPredicate;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.Tags;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Consumer;
 
 public class CGRecipes extends RecipeProvider {
-    public CGRecipes(DataGenerator gen) {
-        super(gen);
+
+    public CGRecipes(PackOutput output) {
+        super(output);
     }
 
     @Override
-    public void buildCraftingRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
-        ShapedRecipeBuilder.shaped(ModItems.SCULKOMETER.get(), 1)
+    public void buildRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SCULKOMETER.get(), 1)
                 .pattern(" s ")
                 .pattern("srs")
                 .pattern(" s ")
@@ -31,7 +31,7 @@ public class CGRecipes extends RecipeProvider {
                 .unlockedBy("has_sculk", has(Items.SCULK))
                 .save(consumer, new ResourceLocation(ChromaGadgets.MODID, "sculkometer"));
 
-        ShapedRecipeBuilder.shaped(ModItems.WHITE_FLAG.get(), 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.WHITE_FLAG.get(), 1)
                 .pattern("sww")
                 .pattern("sew")
                 .pattern("s  ")
@@ -41,7 +41,7 @@ public class CGRecipes extends RecipeProvider {
                 .unlockedBy("has_bad_omen", EffectsChangedTrigger.TriggerInstance.hasEffects(MobEffectsPredicate.effects().and(MobEffects.BAD_OMEN)))
                 .save(consumer, new ResourceLocation(ChromaGadgets.MODID, "white_flag"));
 
-        ShapedRecipeBuilder.shaped(ModItems.SHRIEKER_HORN.get(), 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SHRIEKER_HORN.get(), 1)
                 .pattern("hs")
                 .pattern("sg")
                 .define('s', Items.SCULK)
@@ -50,7 +50,7 @@ public class CGRecipes extends RecipeProvider {
                 .unlockedBy("has_shrieker", has(Items.SCULK_SHRIEKER))
                 .save(consumer, new ResourceLocation(ChromaGadgets.MODID, "shrieker_horn"));
 
-        ShapedRecipeBuilder.shaped(ModItems.MOSSY_MIRROR.get(), 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MOSSY_MIRROR.get(), 1)
                 .pattern(" mr")
                 .pattern("mgm")
                 .pattern("sm ")
@@ -61,7 +61,7 @@ public class CGRecipes extends RecipeProvider {
                 .unlockedBy("has_rcompass", has(Items.RECOVERY_COMPASS))
                 .save(consumer, new ResourceLocation(ChromaGadgets.MODID, "mossy_mirror"));
 
-        ShapelessRecipeBuilder.shapeless(ModItems.ASPHALT.get(), 4)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModItems.ASPHALT.get(), 4)
                 .requires(Items.BLACK_CONCRETE_POWDER)
                 .requires(Items.BLACK_CONCRETE_POWDER)
                 .requires(Tags.Items.COBBLESTONE)
@@ -70,12 +70,16 @@ public class CGRecipes extends RecipeProvider {
                 .unlockedBy("has_black_concrete_powder", has(Items.BLACK_CONCRETE_POWDER))
                 .save(consumer, new ResourceLocation(ChromaGadgets.MODID, "asphalt"));
 
-        UpgradeRecipeBuilder.smithing(Ingredient.of(Items.APPLE), Ingredient.of(Items.GILDED_BLACKSTONE), ModItems.BASTION_APPLE.get())
-                .unlocks("has_gilded_blackstone", has(Items.GILDED_BLACKSTONE))
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.BASTION_APPLE.get())
+                .requires(Items.APPLE)
+                .requires(Items.GILDED_BLACKSTONE)
+                .unlockedBy("has_gilded_blackstone", has(Items.GILDED_BLACKSTONE))
                 .save(consumer, new ResourceLocation(ChromaGadgets.MODID, "bastion_apple"));
 
-        UpgradeRecipeBuilder.smithing(Ingredient.of(Items.IRON_SHOVEL), Ingredient.of(Items.FLINT), ModItems.DEGRAVELER.get())
-                .unlocks("degraveler", has(Items.IRON_SHOVEL))
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.DEGRAVELER.get())
+                .requires(Items.FLINT)
+                .requires(Items.IRON_SHOVEL)
+                .unlockedBy("degraveler", has(Items.IRON_SHOVEL))
                 .save(consumer, new ResourceLocation(ChromaGadgets.MODID, "degraveler"));
     }
 }

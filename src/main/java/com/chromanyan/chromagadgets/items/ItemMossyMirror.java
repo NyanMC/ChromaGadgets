@@ -10,12 +10,10 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -31,12 +29,9 @@ public class ItemMossyMirror extends Item {
 
     ModConfig.Common config = ModConfig.COMMON;
 
-    private static final DamageSource RECALL = new DamageSource("chromagadgets.recall").bypassArmor().bypassMagic().bypassEnchantments().bypassInvul();
     // Do you remember how you got here?
-
     public ItemMossyMirror() {
         super(new Item.Properties()
-                .tab(CreativeModeTab.TAB_TOOLS)
                 .stacksTo(1));
     }
 
@@ -77,7 +72,7 @@ public class ItemMossyMirror extends Item {
         player.teleportTo(deathPos.pos().getX(), deathPos.pos().getY(), deathPos.pos().getZ());
         level.playSound(null, player.blockPosition(), SoundEvents.CHORUS_FRUIT_TELEPORT, SoundSource.PLAYERS, 0.5F, 1.0F);
 
-        player.hurt(RECALL, player.getMaxHealth() * config.mossyMirrorDamage.get().floatValue());
+        player.hurt(player.damageSources().magic(), player.getMaxHealth() * config.mossyMirrorDamage.get().floatValue());
         player.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, config.mossyMirrorWeaknessDuration.get(), config.mossyMirrorWeaknessAmplifier.get()));
 
         player.awardStat(Stats.ITEM_USED.get(this));
