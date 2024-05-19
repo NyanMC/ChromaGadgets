@@ -48,5 +48,7 @@
   "advancement.chromagadgets.degraveler_5.title": "Degraveled",
   "advancement.chromagadgets.degraveler_5.description": "Use a Degraveler to break five or more falling blocks at the same time",
   "advancement.chromagadgets.degraveler_250.title": "Good Riddance",
-  "advancement.chromagadgets.degraveler_250.description": "Use a Degraveler to break 250 or more falling blocks at the same time"
+  "advancement.chromagadgets.degraveler_250.description": "Use a Degraveler to break 250 or more falling blocks at the same time",
+  "advancement.chromagadgets.consume_bastion_apple.title": "Tastes Like Blackstone",
+  "advancement.chromagadgets.consume_bastion_apple.description": "Ignore the warning and eat a Bastion Apple"
 }

@@ -6,6 +6,7 @@ import com.chromanyan.chromagadgets.triggers.DegravelerVeinTrigger;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.CriterionTriggerInstance;
 import net.minecraft.advancements.FrameType;
+import net.minecraft.advancements.critereon.ConsumeItemTrigger;
 import net.minecraft.advancements.critereon.ContextAwarePredicate;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.advancements.critereon.ItemPredicate;
@@ -94,6 +95,21 @@ public class CGAdvancementGenerator implements ForgeAdvancementProvider.Advancem
                 )
                 .parent(degraveler5)
                 .save(consumer, new ResourceLocation(ChromaGadgets.MODID, "degraveler_250"), fileHelper);
+
+        Advancement consumeBastionApple = Advancement.Builder.advancement()
+                .addCriterion("bastion_apple", ConsumeItemTrigger.TriggerInstance.usedItem(ModItems.BASTION_APPLE.get()))
+                .display(
+                        ModItems.BASTION_APPLE.get(),
+                        Component.translatable("advancement.chromagadgets.consume_bastion_apple.title"),
+                        Component.translatable("advancement.chromagadgets.consume_bastion_apple.description"),
+                        null,
+                        FrameType.TASK,
+                        true,
+                        true,
+                        false
+                )
+                .parent(new ResourceLocation("nether/find_bastion"))
+                .save(consumer, new ResourceLocation(ChromaGadgets.MODID, "consume_bastion_apple"), fileHelper);
     }
 
     private CriterionTriggerInstance hasItem(ItemLike item) {

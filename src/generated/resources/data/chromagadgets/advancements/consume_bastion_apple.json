@@ -1,0 +1,36 @@
+{
+  "parent": "minecraft:nether/find_bastion",
+  "criteria": {
+    "bastion_apple": {
+      "conditions": {
+        "item": {
+          "items": [
+            "chromagadgets:bastion_apple"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.chromagadgets.consume_bastion_apple.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "chromagadgets:bastion_apple"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.chromagadgets.consume_bastion_apple.title"
+    }
+  },
+  "requirements": [
+    [
+      "bastion_apple"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
