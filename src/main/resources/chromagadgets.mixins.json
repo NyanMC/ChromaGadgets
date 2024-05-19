@@ -2,12 +2,11 @@
   "required": true,
   "minVersion": "0.8",
   "package": "com.chromanyan.chromagadgets.mixin",
-  "compatibilityLevel": "JAVA_8",
+  "compatibilityLevel": "JAVA_17",
   "refmap": "chromagadgets.refmap.json",
   "mixins": [
-    "MixinExpandedItemInteractionsClientModule",
-    "MixinExpandedItemInteractionsModule",
     "MixinFoodOnAStickItem",
+    "MixinItemStack",
     "MixinLivingEntity"
   ],
   "client": [
