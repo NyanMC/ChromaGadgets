@@ -7,6 +7,7 @@ import net.minecraft.advancements.critereon.MobEffectsPredicate;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.common.Tags;
@@ -49,6 +50,17 @@ public class CGRecipes extends RecipeProvider {
                 .define('g', Items.GOAT_HORN)
                 .unlockedBy("has_shrieker", has(Items.SCULK_SHRIEKER))
                 .save(consumer, new ResourceLocation(ChromaGadgets.MODID, "shrieker_horn"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.ARCHAEOLOGIST_PICK.get(), 1)
+                .pattern("pds")
+                .pattern(" w ")
+                .pattern(" w ")
+                .define('d', ItemTags.DECORATED_POT_SHERDS)
+                .define('p', Items.STONE_PICKAXE)
+                .define('s', Items.STONE_SHOVEL)
+                .define('w', Tags.Items.RODS_WOODEN)
+                .unlockedBy("has_sherd", has(ItemTags.DECORATED_POT_SHERDS))
+                .save(consumer, new ResourceLocation(ChromaGadgets.MODID, "archaeologist_pick"));
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MOSSY_MIRROR.get(), 1)
                 .pattern(" mr")

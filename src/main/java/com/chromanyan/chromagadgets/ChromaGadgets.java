@@ -108,6 +108,7 @@ public class ChromaGadgets {
             event.accept(ModItems.SHRIEKER_HORN.get());
             event.accept(ModItems.DEGRAVELER.get());
             event.accept(ModItems.WANDERING_BUNDLE.get());
+            event.accept(ModItems.ARCHAEOLOGIST_PICK.get());
         }
         if (event.getTabKey().equals(CreativeModeTabs.FOOD_AND_DRINKS)) {
             event.accept(ModItems.BASTION_APPLE.get());

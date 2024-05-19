@@ -22,6 +22,8 @@ public class ModItems {
     public static final RegistryObject<Item> WANDERING_BUNDLE = ITEMS_REGISTRY.register("wandering_bundle", ItemWanderingBundle::new);
     public static final RegistryObject<Item> DEGRAVELER = ITEMS_REGISTRY.register("degraveler",
             () -> new ItemDegraveler(Tiers.IRON, new Item.Properties()));
+    public static final RegistryObject<Item> ARCHAEOLOGIST_PICK = ITEMS_REGISTRY.register("archaeologist_pick",
+            () -> new ItemArchaeologistPick(ModToolMaterials.ARCHAEOLOGIST, new Item.Properties()));
 
     // blockitems
     public static final RegistryObject<Item> ASPHALT = ITEMS_REGISTRY.register("asphalt",

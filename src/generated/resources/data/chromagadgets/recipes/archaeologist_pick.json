@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "d": {
+      "tag": "minecraft:decorated_pot_sherds"
+    },
+    "p": {
+      "item": "minecraft:stone_pickaxe"
+    },
+    "s": {
+      "item": "minecraft:stone_shovel"
+    },
+    "w": {
+      "tag": "forge:rods/wooden"
+    }
+  },
+  "pattern": [
+    "pds",
+    " w ",
+    " w "
+  ],
+  "result": {
+    "item": "chromagadgets:archaeologist_pick"
+  },
+  "show_notification": true
+}

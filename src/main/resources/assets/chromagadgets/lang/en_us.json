@@ -22,6 +22,11 @@
   "item.chromagadgets.degraveler": "Degraveler",
   "tooltip.chromagadgets.degraveler.1": "Breaking a falling block automatically breaks all falling blocks above it",
 
+  "item.chromagadgets.archaeologist_pick": "Archaeologist's Pick",
+  "tooltip.chromagadgets.archaeologist_pick.1": "Functions as both a Pickaxe and Shovel",
+  "tooltip.chromagadgets.archaeologist_pick.2": "Avoids destroying suspicious blocks",
+  "message.chromagadgets.archaeologist_pick.wont_break": "Breaking this would destroy a suspicious block!",
+
   "block.chromagadgets.asphalt": "Asphalt",
 
   "enchantment.chromagadgets.friction": "Friction",
