@@ -4,6 +4,8 @@ import com.chromanyan.chromagadgets.config.ModConfig;
 import com.chromanyan.chromagadgets.datagen.CGAdvancements;
 import com.chromanyan.chromagadgets.datagen.CGModels;
 import com.chromanyan.chromagadgets.datagen.CGRecipes;
+import com.chromanyan.chromagadgets.datagen.tags.CGBlockTags;
+import com.chromanyan.chromagadgets.datagen.tags.CGItemTags;
 import com.chromanyan.chromagadgets.events.GadgetEvents;
 import com.chromanyan.chromagadgets.init.ModBlocks;
 import com.chromanyan.chromagadgets.init.ModEnchantments;
@@ -74,6 +76,10 @@ public class ChromaGadgets {
         gen.addProvider(event.includeClient(), new CGModels(output, efh));
         gen.addProvider(event.includeServer(), new CGRecipes(output));
         gen.addProvider(event.includeServer(), new CGAdvancements(output, lookupProvider, efh));
+
+        CGBlockTags blockTags = new CGBlockTags(output, lookupProvider, efh);
+        gen.addProvider(event.includeServer(), blockTags);
+        gen.addProvider(event.includeServer(), new CGItemTags(output, lookupProvider, blockTags.contentsGetter(), efh));
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
