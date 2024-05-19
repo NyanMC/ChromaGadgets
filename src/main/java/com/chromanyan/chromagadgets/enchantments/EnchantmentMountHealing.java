@@ -13,6 +13,11 @@ public class EnchantmentMountHealing extends Enchantment {
     }
 
     @Override
+    public boolean isDiscoverable() {
+        return false;
+    }
+
+    @Override
     public int getMinCost(int p_45017_) {
         return 10 + (5 * p_45017_);
     }
@@ -30,5 +35,10 @@ public class EnchantmentMountHealing extends Enchantment {
     @Override
     public boolean canEnchant(@NotNull ItemStack itemStack) {
         return itemStack.getItem() instanceof FoodOnAStickItem;
+    }
+
+    @Override
+    public boolean canApplyAtEnchantingTable(ItemStack stack) {
+        return stack.getItem() instanceof FoodOnAStickItem;
     }
 }
