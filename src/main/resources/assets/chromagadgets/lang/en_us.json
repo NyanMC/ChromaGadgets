@@ -11,6 +11,7 @@
 
   "item.chromagadgets.arcane_reroll": "Tome of Arcane Reroll",
   "tooltip.chromagadgets.arcane_reroll.1": "Rerolls Enchanting Table enchantments",
+  "tooltip.chromagadgets.arcane_reroll.apotheosis": "Also rerolls Apotheosis Reforging Table reforges",
 
   "item.chromagadgets.bastion_apple": "Bastion Apple",
   "tooltip.chromagadgets.bastion_apple.1": "When fed to a Piglin or Hoglin, prevents it from zombifying in the Overworld",

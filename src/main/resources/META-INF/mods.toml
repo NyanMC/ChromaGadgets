@@ -73,6 +73,12 @@ description='''${mod_description}'''
    versionRange="[17,)"
    ordering="BEFORE"
    side="CLIENT"
+[[dependencies.chromagadgets]]
+   modId="apotheosis"
+   mandatory=false
+   versionRange="[7,)"
+   ordering="AFTER"
+   side="BOTH"
 
 [modproperties.chromagadgets]
    catalogueImageIcon="icon.png"
