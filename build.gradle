@@ -210,6 +210,11 @@ dependencies {
     implementation fg.deobf("curse.maven:patchouli-306770:4966125")
     implementation fg.deobf("curse.maven:apotheosis-313970:5317303")
 
+    compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:0.3.2"))
+    implementation(jarJar("io.github.llamalad7:mixinextras-forge:0.3.2")) {
+        jarJar.ranged(it, "[0.3.2,)")
+    }
+
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }
 
