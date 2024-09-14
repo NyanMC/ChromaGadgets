@@ -1,0 +1,59 @@
+{
+  "item.chromagadgets.sculkometer": "Скалкометр",
+  "tooltip.chromagadgets.sculkometer.1": "Измеряет агрессию крикунов хранителя",
+
+  "item.chromagadgets.white_flag": "Белый флаг",
+  "tooltip.chromagadgets.white_flag.1": "Позволяет сдаться в рейде, заканчивая его поражением",
+  "tooltip.chromagadgets.white_flag.2": "Существующие рейдеры не исчезнут, но будут предотвращены дополнительные волны",
+
+  "item.chromagadgets.shrieker_horn": "Рог визгуна",
+  "tooltip.chromagadgets.shrieker_horn.1": "Может спровоцировать нежелательную компанию при неоднократном использовании в глубокой тьме",
+
+  "item.chromagadgets.arcane_reroll": "Фолиант чародейского переворота",
+  "tooltip.chromagadgets.arcane_reroll.1": "Переписывает зачарования стола зачарования",
+  "tooltip.chromagadgets.arcane_reroll.apotheosis": "Также переписывает усиления стола перековки из апофеозиса",
+
+  "item.chromagadgets.bastion_apple": "Яблоко бастиона",
+  "tooltip.chromagadgets.bastion_apple.1": "При кормлении пиглина или хоглина предотвращает его зомбирование в обычном мире",
+  "tooltip.chromagadgets.bastion_apple.2": "Не подходит для потребления игроками",
+
+  "item.chromagadgets.wandering_bundle": "Сумка странника",
+
+  "item.chromagadgets.degraveler": "Разгравитель",
+  "tooltip.chromagadgets.degraveler.1": "Разрушение падающего блока автоматически разбивает все падающие блоки над ним",
+
+ "item.chromagadgets.archaeologist_pick": "Кирка археолога",
+  "tooltip.chromagadgets.archaeologist_pick.1": "Функционирует как кирка и лопата",
+  "tooltip.chromagadgets.archaeologist_pick.2": "Избегает уничтожения подозрительных блоков",
+  "message.chromagadgets.archaeologist_pick.wont_break": "Если сломать не киркой, подозрительный блок будет уничтожен!",
+
+  "block.chromagadgets.asphalt": "Асфальт",
+
+  "enchantment.chromagadgets.friction": "Трение",
+  "enchantment.chromagadgets.friction.desc": "Предотвращает скольжение по скользким блокам, например льду.",
+
+  "enchantment.chromagadgets.slipperiness": "Проклятие скользкости",
+  "enchantment.chromagadgets.slipperiness.desc": "Заставляет владельца скользить, как если бы он всегда был на льду.",
+
+  "enchantment.chromagadgets.mount_healing": "Наездное исцеление",
+  "enchantment.chromagadgets.mount_healing.desc": "Лечит скакуна при его усилении.",
+
+  "item.chromagadgets.mossy_mirror": "Мшистое зеркало",
+  "tooltip.chromagadgets.mossy_mirror.1": "В инвентаре игрока показывает координаты его последней смерти",
+  "tooltip.chromagadgets.mossy_mirror.2": "Зеркало указывает на следующие координаты:",
+  "tooltip.chromagadgets.mossy_mirror.3": "Оно тесно связано с болотом... что, если вы использовали его в одном из них?",
+  "tooltip.chromagadgets.mossy_mirror.charged.1": "Наделён энергией болота.",
+  "tooltip.chromagadgets.mossy_mirror.charged.2": "Используйте, чтобы вернуться к последней точке смерти.",
+  "tooltip.chromagadgets.mossy_mirror.charged.3": "Наносит урон и накладывает при этом отрицательные эффекты.",
+  "death.attack.chromagadgets.recall": "Тело %1$s было разорвано на части при возвращении к точке смерти",
+  "death.attack.chromagadgets.recall.player": "%1$s был убит воспоминаниями о смерти при попытке бегства от %2$s",
+
+  "advancement.chromagadgets.charged_mossy_mirror.title": "Введите \"БОЛЬ\", чтобы перейти к ней сейчас!",
+  "advancement.chromagadgets.charged_mossy_mirror.description": "Зарядите мшистое зеркало, используя его на болоте",
+  "advancement.chromagadgets.degraveler_5.title": "Разгравленный",
+  "advancement.chromagadgets.degraveler_5.description": "Используйте разгравитель, чтобы сломать пять или более падающих блоков одновременно",
+  "advancement.chromagadgets.degraveler_250.title": "Скатертью дорога",
+  "advancement.chromagadgets.degraveler_250.description": "Используйте разгравитель, чтобы сломать 250 или более падающих блоков одновременно",
+  "advancement.chromagadgets.consume_bastion_apple.title": "На вкус как чернит",
+  "advancement.chromagadgets.consume_bastion_apple.description": "Не обращайте внимания на предупреждение и съешьте яблоко бастиона"
+}
