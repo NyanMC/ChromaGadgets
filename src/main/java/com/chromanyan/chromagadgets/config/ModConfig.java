@@ -20,6 +20,7 @@ public class ModConfig {
         public final BooleanValue canNestWanderingBundle;
         public final IntValue wanderingBundleMinItemsGenerated;
         public final IntValue wanderingBundleMaxItemsGenerated;
+        public final BooleanValue itemstackIsBundle;
 
         public final IntValue degravelerVeinLimit;
 
@@ -61,6 +62,9 @@ public class ModConfig {
                     wanderingBundleMaxItemsGenerated = builder
                             .comment("When a Wandering Bundle is dropped, it fills itself with a random amount of stacks (pulled from Wandering Trader trades) ranging from 1 to this number. Set to 0 to disable. This setting is ignored if dropWanderingBundle is set to false.")
                             .defineInRange("wanderingBundleMaxItemsGenerated", 5, 0, Integer.MAX_VALUE);
+                    itemstackIsBundle = builder
+                            .comment("Whether Wandering Bundles should count as Bundles when a mod compares items using ItemStack#is. This allows for compatibility with mods such as Quark, but is EXTREMELY HACKY and could break other mods.")
+                            .define("itemstackIsBundle", true);
                 builder.pop();
                 builder.push("DegravelerSettings");
                     degravelerVeinLimit = builder

@@ -1,5 +1,6 @@
 package com.chromanyan.chromagadgets.mixin;
 
+import com.chromanyan.chromagadgets.config.ModConfig;
 import com.chromanyan.chromagadgets.init.ModItems;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -18,6 +19,7 @@ public abstract class MixinItemStack {
     private void is(Item p_150931_, CallbackInfoReturnable<Boolean> cir) {
         // we only care about bundles
         if (!p_150931_.equals(Items.BUNDLE)) return;
+        if (!ModConfig.COMMON.itemstackIsBundle.get()) return;
 
         Item item = ((ItemStack)(Object)this).getItem();
         cir.setReturnValue(item == Items.BUNDLE || item == ModItems.WANDERING_BUNDLE.get());
